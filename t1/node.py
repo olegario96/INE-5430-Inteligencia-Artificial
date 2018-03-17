@@ -9,8 +9,8 @@ class Node(object):
   def __init__(self, score, type_node):
     self.score = score
     self.type_node = type_node
-    self.alpha = float('-inf')
-    self.beta = float('inf')
+    self.alpha = global_beta
+    self.beta = global_beta
 
   def minimax(level):
     if (level == 0):
@@ -21,8 +21,9 @@ class Node(object):
         evaluate_alpha(score)
       else
         evaluate_beta(score)
+      if self.alpha > self.beta:
+        break
     self.update_global_alpha_beta()
-
 
   def evaluate_alpha(score):
     if (score > self.alpha):
