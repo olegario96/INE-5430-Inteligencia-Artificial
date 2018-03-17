@@ -23,7 +23,9 @@ class Node(object):
         evaluate_beta(score)
       if self.alpha > self.beta:
         break
+    self.update_score()
     self.update_global_alpha_beta()
+    return self.score
 
   def evaluate_alpha(score):
     if (score > self.alpha):
@@ -40,3 +42,9 @@ class Node(object):
     else
       if self.beta > global_alpha:
         global_alpha = self.beta
+
+  def update_score(self):
+    if self.type_node == MACHINE_STR:
+      self.score = self.alpha
+    else
+      self.score = self.beta
