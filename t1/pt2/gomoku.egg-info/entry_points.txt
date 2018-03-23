@@ -1,0 +1,3 @@
+[gui_scripts]
+gomoku = gomoku.__main__:run
+
