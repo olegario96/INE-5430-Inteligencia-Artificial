@@ -45,14 +45,31 @@ def test_check_victory_horizontal(board):
   for move in moves_for_horizontal_victory:
     copy_board.analyze_move(move)
     copy_board.switch_current_player()
-  assert copy_board.check_victory_horizontal() == board.player1
+  assert copy_board.check_victory_horizontal() == copy_board.player1
 
 def test_check_victory_vertical(board):
+  copy_board = copy.deepcopy(board)
   moves_for_vertical_victory = [(1,6), (2,6), (3,6), (4,6), (5,6)]
   for move in moves_for_vertical_victory:
-    board.analyze_move(move)
-    board.switch_current_player()
-  assert board.check_victory_vertical() == board.player1
+    copy_board.analyze_move(move)
+    copy_board.switch_current_player()
+  assert copy_board.check_victory_vertical() == copy_board.player1
+
+def test_check_victory_diagonal_left_right(board):
+  copy_board = copy.deepcopy(board)
+  moves_for_diagonal_left_right_victory = [(1,1), (2,2), (3,3), (4,4), (5,5)]
+  for move in moves_for_diagonal_left_right_victory:
+    copy_board.analyze_move(move)
+    copy_board.switch_current_player()
+  assert copy_board.check_victory_diagonal_left_right() == copy_board.player1
+
+def test_check_victory_diagonal_right_left(board):
+  copy_board = copy.deepcopy(board)
+  moves_for_diagonal_right_left_victory = [(7,7), (6,8), (5,9), (4,10), (3,11)]
+  for move in moves_for_diagonal_right_left_victory:
+    copy_board.analyze_move(move)
+    copy_board.switch_current_player()
+  assert copy_board.check_victory_diagonal_right_left() == copy_board.player1
 
 def test_get_match_ended(board):
   assert board.get_match_ended()
