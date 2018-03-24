@@ -1,0 +1,1 @@
+from .gomokuController import GomokuController

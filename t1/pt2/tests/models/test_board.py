@@ -21,6 +21,9 @@ def test_turn_for_current_player(board):
 def test_not_player2_turn(board):
   assert not board.player2.is_player_turn()
 
+def test_get_current_player(board):
+  assert board.get_current_player() == board.player1
+
 def test_match_not_ended(board):
   assert not board.match_ended
 
@@ -51,8 +54,16 @@ def test_check_victory_vertical(board):
     board.switch_current_player()
   assert board.check_victory_vertical() == board.player1
 
-def test_match_ended(board):
-  assert board.match_ended
+def test_get_match_ended(board):
+  assert board.get_match_ended()
+
+def test_clear_positions(board):
+  board.clear_positions()
+  assert board.positions[randrange(15)][randrange(15)].is_empty()
+
+def restart_match(board):
+  board.restart_match()
+  assert board.get_current_player() == board.player1
 
 if __name__ == '__main__':
   import doctest

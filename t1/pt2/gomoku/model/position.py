@@ -21,3 +21,6 @@ class Position(object):
 
   def get_column(self):
     return self.j
+
+  def clear(self):
+    self.piece = None

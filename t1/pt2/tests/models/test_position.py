@@ -45,6 +45,10 @@ def test_get_player_with_piece(position):
   position.set_piece(piece)
   assert position.get_player_from_position() == player
 
+def test_clear(position):
+  position.clear()
+  assert position.piece == None
+
 if __name__ == '__main__':
   import doctest
   doctest.testmod()
