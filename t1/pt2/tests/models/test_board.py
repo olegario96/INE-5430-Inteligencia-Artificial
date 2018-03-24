@@ -1,3 +1,4 @@
+import copy
 import pytest
 
 from gomoku.model import Board
@@ -36,14 +37,12 @@ def test_analyze_move(board):
   assert position_not_empty and switch_player
 
 def test_check_victory_horizontal(board):
+  copy_board = copy.deepcopy(board)
   moves_for_horizontal_victory = [(1,1), (1,2), (1,3), (1,4), (1,5)]
   for move in moves_for_horizontal_victory:
-    board.analyze_move(move)
-    board.switch_current_player()
-  assert board.check_victory_horizontal() == board.player1
-
-def test_match_ended(board):
-  assert board.match_ended
+    copy_board.analyze_move(move)
+    copy_board.switch_current_player()
+  assert copy_board.check_victory_horizontal() == board.player1
 
 def test_check_victory_vertical(board):
   moves_for_vertical_victory = [(1,6), (2,6), (3,6), (4,6), (5,6)]
@@ -51,6 +50,9 @@ def test_check_victory_vertical(board):
     board.analyze_move(move)
     board.switch_current_player()
   assert board.check_victory_vertical() == board.player1
+
+def test_match_ended(board):
+  assert board.match_ended
 
 if __name__ == '__main__':
   import doctest
