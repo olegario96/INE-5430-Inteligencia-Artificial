@@ -87,7 +87,47 @@ class Board(object):
     return None
 
   def check_victory_diagonal_left_right(self):
-    pass
+    for twicecolumn in range(0, 2*Board.COLUMNS):
+      i = 0
+      player_in_previous_position = None
+      player_in_current_position = None
+      for row in range(twicecolumn, -1, -1):
+        column = row - twicecolumn
+        if (column<Board.COLUMNS and row<Board.ROWS):
+          print(i)
+          if not self.positions[row][column].is_empty():
+            player_in_current_position = self.positions[row][column].get_player_from_position()
+            if player_in_current_position == player_in_previous_position:
+              i += 1
+              if i == 5:
+                self.match_ended = True
+                return player_in_current_position
+            else:
+              i = 1
+              player_in_previous_position = player_in_current_position
+          else:
+            i = 0
+    return None
 
   def check_victory_diagonal_right_left(self):
-    pass
+    for twicecolumn in range(0, 2*Board.COLUMNS):
+      i = 0
+      player_in_previous_position = None
+      player_in_current_position = None
+      for row in range(0, twicecolumn+1):
+        column = twicecolumn - row
+        if (column<Board.COLUMNS and row<Board.ROWS):
+          print(i)
+          if not self.positions[column][row].is_empty():
+            player_in_current_position = self.positions[column][row].get_player_from_position()
+            if player_in_current_position == player_in_previous_position:
+              i += 1
+              if i == 5:
+                self.match_ended = True
+                return player_in_current_position
+            else:
+              i = 1
+              player_in_previous_position = player_in_current_position
+          else:
+            i = 0
+    return None
