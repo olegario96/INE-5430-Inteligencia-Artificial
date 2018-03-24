@@ -16,4 +16,7 @@ class Player(object):
       self.turn = True
 
   def __eq__(self, other):
-    return self.player_symbol == other.get_symbol()
+    if other == None:
+      return False
+    else:
+      return self.player_symbol == other.get_symbol()

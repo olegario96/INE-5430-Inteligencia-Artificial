@@ -10,6 +10,7 @@ class Board(object):
     self.player2 = player2
     self.current_player = self.player1
     self.player1.switch_turn()
+    self.match_ended = False
     self.positions = []
     self.initialize_positions()
 
@@ -21,7 +22,7 @@ class Board(object):
       self.positions.append(row)
 
   def analyze_move(self, move):
-    if self.current_player.is_player_turn():
+    if self.current_player.is_player_turn() and not self.match_ended:
       i, j = move
       position = self.positions[i][j]
       if position.is_empty():
@@ -49,17 +50,16 @@ class Board(object):
       player_in_previous_position = None
       player_in_current_position = None
       for position in row:
-        print(position)
         if not position.is_empty():
           player_in_current_position = position.get_player_from_position()
           if player_in_current_position == player_in_previous_position:
-            print('oi')
             i += 1
             if i == 5:
+              self.match_ended = True
               return player_in_current_position
           else:
-            player_in_previous_position = player_in_current_position
             i = 1
+            player_in_previous_position = player_in_current_position
         else:
           i = 0
 
@@ -71,14 +71,18 @@ class Board(object):
       player_in_previous_position = None
       player_in_current_position = None
       for column in range(0, Board.COLUMNS):
-        player_in_current_position = self.positions[column][row].get_player_from_position()
-        if player_in_current_position == player_in_previous_position:
-          i += 1
-          if i == 5:
-            return player_in_current_position
+        if not self.positions[column][row].is_empty():
+          player_in_current_position = self.positions[column][row].get_player_from_position()
+          if player_in_current_position == player_in_previous_position:
+            i += 1
+            if i == 5:
+              self.match_ended = True
+              return player_in_current_position
+          else:
+            i = 1
+            player_in_previous_position = player_in_current_position
         else:
           i = 0
-          player_in_previous_position = player_in_current_position
 
     return None
 
