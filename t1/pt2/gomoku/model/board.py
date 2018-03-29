@@ -90,8 +90,7 @@ class Board(object):
       player_in_current_position = None
       for row in range(twicecolumn, -1, -1):
         column = row - twicecolumn
-        if (column<Board.COLUMNS and row<Board.ROWS):
-          print(i)
+        if column < Board.COLUMNS and row < Board.ROWS:
           if not self.positions[row][column].is_empty():
             player_in_current_position = self.positions[row][column].get_player_from_position()
             if player_in_current_position == player_in_previous_position:
@@ -114,7 +113,6 @@ class Board(object):
       for row in range(0, twicecolumn+1):
         column = twicecolumn - row
         if (column<Board.COLUMNS and row<Board.ROWS):
-          print(i)
           if not self.positions[column][row].is_empty():
             player_in_current_position = self.positions[column][row].get_player_from_position()
             if player_in_current_position == player_in_previous_position:
@@ -146,3 +144,6 @@ class Board(object):
 
   def get_match_ended(self):
     return self.match_ended
+
+  def get_positions(self):
+    return self.positions

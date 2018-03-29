@@ -21,6 +21,9 @@ def test_turn_for_current_player(board):
 def test_not_player2_turn(board):
   assert not board.player2.is_player_turn()
 
+def test_get_positions(board):
+  assert board.positions == board.get_positions()
+
 def test_get_current_player(board):
   assert board.get_current_player() == board.player1
 
