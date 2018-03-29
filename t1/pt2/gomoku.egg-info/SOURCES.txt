@@ -6,8 +6,13 @@ gomoku.egg-info/dependency_links.txt
 gomoku.egg-info/entry_points.txt
 gomoku.egg-info/requires.txt
 gomoku.egg-info/top_level.txt
+gomoku/controller/__init__.py
+gomoku/controller/gomokuController.py
 gomoku/model/__init__.py
+gomoku/model/ai_player.py
 gomoku/model/board.py
 gomoku/model/piece.py
 gomoku/model/player.py
 gomoku/model/position.py
+gomoku/view/__init__.py
+gomoku/view/mainWindow.py
