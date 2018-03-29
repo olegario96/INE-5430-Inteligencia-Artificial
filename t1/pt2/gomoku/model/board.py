@@ -38,9 +38,6 @@ class Board(object):
     self.player1.switch_turn()
     self.player2.switch_turn()
 
-  def analyze_victory(self):
-    return self.check_victory_horizontal() or self.check_victory_vertical() or self.check_victory_diagonal_left_right() or self.check_victory_diagonal_right_left()
-
   def check_victory_horizontal(self):
     for row in self.positions:
       i = 0
@@ -91,6 +88,8 @@ class Board(object):
       for row in range(twicecolumn, -1, -1):
         column = row - twicecolumn
         if column < Board.COLUMNS and row < Board.ROWS:
+          print('Row: {:d}'.format(row))
+          print('Column: {:d}'.format(column))
           if not self.positions[row][column].is_empty():
             player_in_current_position = self.positions[row][column].get_player_from_position()
             if player_in_current_position == player_in_previous_position:
@@ -112,7 +111,7 @@ class Board(object):
       player_in_current_position = None
       for row in range(0, twicecolumn+1):
         column = twicecolumn - row
-        if (column<Board.COLUMNS and row<Board.ROWS):
+        if (column < Board.COLUMNS and row < Board.ROWS):
           if not self.positions[column][row].is_empty():
             player_in_current_position = self.positions[column][row].get_player_from_position()
             if player_in_current_position == player_in_previous_position:
@@ -126,6 +125,11 @@ class Board(object):
           else:
             i = 0
     return None
+
+  def analyze_victory(self):
+    horizontal_verical = self.check_victory_horizontal() or self.check_victory_vertical()
+    diagonals = self.check_victory_diagonal_left_right() or self.check_victory_diagonal_right_left()
+    return horizontal_verical or diagonals
 
   def restart_match(self):
     self.clear_positions()

@@ -123,13 +123,13 @@ class AIPlayer(Player):
             if not positions[i-k][j-k].is_empty() and positions[i-k][j-k].get_player() == player:
               pieces_in_a_row += 1
             else:
-              if positions[j][i].is_empty() and pieces_in_a_row == 0:
+              if positions[i-k][j-k].is_empty() and pieces_in_a_row == 0:
                 self.started_with_gap = True
-              elif positions[j][i].is_empty() and pieces_in_a_row > 0:
+              elif positions[i-k][j-k].is_empty() and pieces_in_a_row > 0:
                 self.ended_with_gap = True
-              elif not positions[j][i].is_empty() and pieces_in_a_row == 0:
+              elif not positions[i-k][j-k].is_empty() and pieces_in_a_row == 0:
                 self.started_with_gap = False
-              elif not positions[j][i].is_empty() and pieces_in_a_row > 0:
+              elif not positions[i-k][j-k].is_empty() and pieces_in_a_row > 0:
                 self.ended_with_gap = False
 
               self.evaluate_pieces_in_a_row(pieces_in_a_row)

@@ -19,3 +19,6 @@ class GomokuController(object):
 
   def match_ended(self):
     return self.board.get_match_ended()
+
+  def get_board(self):
+    return self.board
