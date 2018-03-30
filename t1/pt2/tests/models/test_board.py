@@ -19,13 +19,13 @@ def test_analyze_move(board):
   move = (randrange(15), randrange(15))
   i, j = move
   board.analyze_move(move)
-  switch_player = board.player2.is_player_turn() == True
+  current_player_is_player2 = board.get_current_player() == board.player2
   position_not_empty = board.positions[i][j].is_empty() == False
-  assert position_not_empty and switch_player
+  assert position_not_empty and current_player_is_player2
 
 def test_switch_current_player(board):
   board.switch_current_player()
-  assert board.player1.is_player_turn() and board.get_current_player() == board.player1
+  assert board.player1 == board.get_current_player()
 
 def test_check_victory_horizontal(board):
   copy_board = copy.deepcopy(board)
@@ -83,9 +83,6 @@ def test_get_match_ended(board):
 
 def test_get_positions(board):
   assert board.get_positions() == board.positions
-
-def test_turn_for_current_player(board):
-  assert board.get_current_player().is_player_turn()
 
 # FAZER UM TESTE JOGANDO UMA PEÇA NUM LUGAR QUE JÁ TEM UMA
 # TESTAR FINAL DA PARTIDA PARA UM TABULEIRO QUE TERMINOU

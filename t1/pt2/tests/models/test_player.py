@@ -7,15 +7,8 @@ def player():
   player = Player('X')
   return player
 
-def test_player_is_player_turn(player):
-  assert not player.is_player_turn()
-
 def test_get_symbol(player):
   assert player.get_symbol() == 'X'
-
-def test_switch_turn(player):
-  player.switch_turn()
-  assert player.is_player_turn()
 
 def test_equality_operator(player):
   new_player = Player('O')

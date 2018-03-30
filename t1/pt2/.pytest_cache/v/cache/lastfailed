@@ -1,0 +1,4 @@
+{
+  "tests/models/test_ai_player.py::test_calculate_points_diagonal_left_right_double": true,
+  "tests/models/test_ai_player.py::test_calculate_points_vertical": true
+}

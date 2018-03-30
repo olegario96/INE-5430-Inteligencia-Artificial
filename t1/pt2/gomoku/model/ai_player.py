@@ -13,8 +13,8 @@ class AIPlayer(Player):
     super(AIPlayer, self).__init__(player_symbol)
     self.sequences = [0,0,0,0,0]
     self.gaps = [0,0,0,0,0]
-    self.started_with_gap = True
-    self.ended_with_gap = True
+    self.started_with_gap = False
+    self.ended_with_gap = False
 
   def simulate_move(self):
     return None
@@ -42,8 +42,8 @@ class AIPlayer(Player):
 
           self.evaluate_pieces_in_a_row(pieces_in_a_row)
           pieces_in_a_row = 0
-      self.started_with_gap = True
-      self.ended_with_gap = True
+      self.started_with_gap = False
+      self.ended_with_gap = False
       pieces_in_a_row = 0
 
   def calculate_points_vertical(self, board, player):
@@ -66,8 +66,8 @@ class AIPlayer(Player):
 
           self.evaluate_pieces_in_a_row(pieces_in_a_row)
           pieces_in_a_row = 0
-      self.started_with_gap = True
-      self.ended_with_gap = True
+      self.started_with_gap = False
+      self.ended_with_gap = False
       pieces_in_a_row = 0
 
   def calculate_points_diagonal_left_right(self, board, player):
@@ -96,8 +96,8 @@ class AIPlayer(Player):
               pieces_in_a_row = 0
               break
 
-      self.started_with_gap = True
-      self.ended_with_gap = True
+      self.started_with_gap = False
+      self.ended_with_gap = False
       pieces_in_a_row = 0
 
   def calculate_points_diagonal_right_left(self, board, player):
@@ -125,8 +125,8 @@ class AIPlayer(Player):
               self.evaluate_pieces_in_a_row(pieces_in_a_row)
               pieces_in_a_row = 0
               break
-      self.started_with_gap = True
-      self.ended_with_gap = True
+      self.started_with_gap = False
+      self.ended_with_gap = False
       pieces_in_a_row = 0
 
   def calculate_points(self):
@@ -187,7 +187,6 @@ class AIPlayer(Player):
       if self.ended_with_gap:
         self.gaps[3] += 1
     elif pieces_in_a_row == 5:
-      print('>>>>>>>>>>>>>>>>>')
       self.sequences[4] += 1
       if self.started_with_gap:
         self.gaps[4] += 1

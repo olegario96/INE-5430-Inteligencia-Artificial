@@ -9,7 +9,6 @@ class Board(object):
     self.player1 = player1
     self.player2 = player2
     self.current_player = self.player1
-    self.player1.switch_turn()
     self.match_ended = False
     self.positions = []
     self.initialize_positions()
@@ -22,7 +21,7 @@ class Board(object):
       self.positions.append(row)
 
   def analyze_move(self, move):
-    if self.current_player.is_player_turn() and not self.match_ended:
+    if not self.match_ended:
       i, j = move
       position = self.positions[i][j]
       if position.is_empty():
@@ -35,8 +34,6 @@ class Board(object):
       self.current_player = self.player2
     else:
       self.current_player = self.player1
-    self.player1.switch_turn()
-    self.player2.switch_turn()
 
   def check_victory_horizontal(self):
     for row in self.positions:
@@ -148,8 +145,6 @@ class Board(object):
   def restart_match(self):
     self.clear_positions()
     self.match_ended = False
-    if not self.player1.is_player_turn():
-      self.switch_current_player()
     self.current_player = self.player1
 
   def clear_positions(self):
