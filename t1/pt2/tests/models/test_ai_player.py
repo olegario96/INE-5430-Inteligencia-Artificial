@@ -45,15 +45,15 @@ def test_calculate_points_diagonal_left_right(ai_player):
   ai_player.calculate_points_diagonal_left_right(board, ai_player)
   assert ai_player.sequences[4] == 1 and ai_player.gaps[4] == 2
 
-# def test_calculate_points_diagonal_left_right_double(ai_player):
-#   player2 = Player('O')
-#   board = Board(ai_player, player2)
-#   moves_for_diagonal_victory = [(1,1), (0,2)]
-#   for move in moves_for_diagonal_victory:
-#     board.analyze_move(move)
-#     board.switch_current_player()
-#   ai_player.calculate_points_diagonal_left_right(board, ai_player)
-#   assert ai_player.sequences[1] == 1 and ai_player.gaps[4] == 2
+def test_calculate_points_diagonal_left_right_double(ai_player):
+  player2 = Player('O')
+  board = Board(ai_player, player2)
+  moves_for_diagonal_victory = [(1,1), (0,2)]
+  for move in moves_for_diagonal_victory:
+    board.analyze_move(move)
+    board.switch_current_player()
+  ai_player.calculate_points_diagonal_left_right(board, ai_player)
+  assert ai_player.sequences[1] == 1 and ai_player.gaps[4] == 2
 
 def test_calculate_points_diagonal_right_left(ai_player):
   player2 = Player('O')
