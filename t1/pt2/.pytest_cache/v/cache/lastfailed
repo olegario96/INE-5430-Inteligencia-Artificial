@@ -1,0 +1,4 @@
+{
+  "tests/controller/test_gomoku_controller.py::test_board_after_valid_move": true,
+  "tests/models/test_ai_player.py::test_calculate_points_diagonal": true
+}
