@@ -1,5 +1,6 @@
 import itertools
 from math import inf
+from gomoku.model import Board
 from gomoku.model import Player
 
 class AIPlayer(Player):
@@ -16,35 +17,18 @@ class AIPlayer(Player):
     self.ended_with_gap = True
 
   def simulate_move(self):
-    pass
+    return None
 
   def minimax(self, board, level):
-    pass
+    return None
 
-  def calcula_value_for_move(self, board):
-    return calculate_points_for_machine(board) - calculate_points_for_human(board)
-
-  def calculate_points_for_machine(self, board):
-    self.calculate_points_horziontal(board, self)
-    self.calculate_points_vertical(board, self)
-    self.calculate_points_diagonal_left_right(board, self)
-    self.calculate_points_diagonal_right_left(board, self)
-    return calculates_points()
-
-  def calculate_points_for_human(self, board, human_player):
-    self.calculate_points_horziontal(board, human_player)
-    self.calculate_points_vertical(board, human_player)
-    self.calculate_points_diagonal_left_right(board, human_player)
-    self.calculate_points_diagonal_right_left(board, human_player)
-    return calculates_points()
-
-  def calculate_points_horziontal(self, board, player):
+  def calculate_points_horizontal(self, board, player):
     pieces_in_a_row = 0
     positions = board.get_positions()
 
     for i in range(0, Board.ROWS):
       for j in range(0, Board.COLUMNS):
-        if not positions[i][j].is_empty() and positions[i][j].get_player() == player:
+        if not positions[i][j].is_empty() and positions[i][j].get_player_from_position() == player:
           pieces_in_a_row += 1
         else:
           if positions[i][j].is_empty() and pieces_in_a_row == 0:
@@ -68,7 +52,7 @@ class AIPlayer(Player):
 
     for i in range(0, Board.ROWS):
       for j in range(0, Board.COLUMNS):
-        if not positions[j][i].is_empty() and positions[j][i].get_player() == player:
+        if not positions[j][i].is_empty() and positions[j][i].get_player_from_position() == player:
           pieces_in_a_row += 1
         else:
           if positions[j][i].is_empty() and pieces_in_a_row == 0:
@@ -92,48 +76,54 @@ class AIPlayer(Player):
 
     for i in range(0, board.ROWS):
       for j in range(0, board.COLUMNS):
-        if i > 3 and j < 11:
           for k in range(0, 5):
-            if not positions[i-k][j+k].is_empty() and positions[i-k][j+k].get_player() == player:
-              pieces_in_a_row += 1
+            if i-k >= 0 and j+k < 15:
+              if not positions[i-k][j+k].is_empty() and positions[i-k][j+k].get_player_from_position() == player:
+                pieces_in_a_row += 1
+              else:
+                if positions[i-k][j+k].is_empty() and pieces_in_a_row == 0:
+                  self.started_with_gap = True
+                elif positions[i-k][j+k].is_empty() and pieces_in_a_row > 0:
+                  self.ended_with_gap = True
+                elif not positions[i-k][j+k].is_empty() and pieces_in_a_row == 0:
+                  self.started_with_gap = False
+                elif not positions[i-k][j+k].is_empty() and pieces_in_a_row > 0:
+                  self.ended_with_gap = False
+                self.evaluate_pieces_in_a_row(pieces_in_a_row)
+                pieces_in_a_row = 0
             else:
-              if positions[i-k][j+k].is_empty() and pieces_in_a_row == 0:
-                self.started_with_gap = True
-              elif positions[i-k][j+k].is_empty() and pieces_in_a_row > 0:
-                self.ended_with_gap = True
-              elif not positions[i-k][j+k].is_empty() and pieces_in_a_row == 0:
-                self.started_with_gap = False
-              elif not positions[i-k][j+k].is_empty() and pieces_in_a_row > 0:
-                self.ended_with_gap = False
-
               self.evaluate_pieces_in_a_row(pieces_in_a_row)
               pieces_in_a_row = 0
+              break
       self.started_with_gap = True
       self.ended_with_gap = True
       pieces_in_a_row = 0
 
-  def calculate_points_right_left(self, board, player):
+  def calculate_points_diagonal_right_left(self, board, player):
     pieces_in_a_row = 0
     positions = board.get_positions()
 
-    for i in range(board.ROWS, 0, -1):
-      for j in range(board.COLUMNS, 0, -1):
-        if i > 3 and j > 3:
+    for i in range(0, board.ROWS):
+      for j in range(0, board.COLUMNS):
           for k in range(0, 5):
-            if not positions[i-k][j-k].is_empty() and positions[i-k][j-k].get_player() == player:
-              pieces_in_a_row += 1
+            if i+k < 15 and j+k < 15:
+              if not positions[i+k][j+k].is_empty() and positions[i+k][j+k].get_player_from_position() == player:
+                pieces_in_a_row += 1
+              else:
+                if positions[i+k][j+k].is_empty() and pieces_in_a_row == 0:
+                  self.started_with_gap = True
+                elif positions[i+k][j+k].is_empty() and pieces_in_a_row > 0:
+                  self.ended_with_gap = True
+                elif not positions[i+k][j+k].is_empty() and pieces_in_a_row == 0:
+                  self.started_with_gap = False
+                elif not positions[i+k][j+k].is_empty() and pieces_in_a_row > 0:
+                  self.ended_with_gap = False
+                self.evaluate_pieces_in_a_row(pieces_in_a_row)
+                pieces_in_a_row = 0
             else:
-              if positions[i-k][j-k].is_empty() and pieces_in_a_row == 0:
-                self.started_with_gap = True
-              elif positions[i-k][j-k].is_empty() and pieces_in_a_row > 0:
-                self.ended_with_gap = True
-              elif not positions[i-k][j-k].is_empty() and pieces_in_a_row == 0:
-                self.started_with_gap = False
-              elif not positions[i-k][j-k].is_empty() and pieces_in_a_row > 0:
-                self.ended_with_gap = False
-
               self.evaluate_pieces_in_a_row(pieces_in_a_row)
               pieces_in_a_row = 0
+              break
       self.started_with_gap = True
       self.ended_with_gap = True
       pieces_in_a_row = 0
@@ -150,6 +140,23 @@ class AIPlayer(Player):
   def restart_sequences_and_gaps(self):
     self.sequences = [0,0,0,0,0]
     self.gaps = [0,0,0,0,0]
+
+  def calcula_value_for_move(self, board):
+    return calculate_points_for_machine(board) - calculate_points_for_human(board)
+
+  def calculate_points_for_machine(self, board):
+    self.calculate_points_horziontal(board, self)
+    self.calculate_points_vertical(board, self)
+    self.calculate_points_diagonal_left_right(board, self)
+    self.calculate_points_diagonal_right_left(board, self)
+    return calculates_points()
+
+  def calculate_points_for_human(self, board, human_player):
+    self.calculate_points_horziontal(board, human_player)
+    self.calculate_points_vertical(board, human_player)
+    self.calculate_points_diagonal_left_right(board, human_player)
+    self.calculate_points_diagonal_right_left(board, human_player)
+    return calculates_points()
 
   def evaluate_pieces_in_a_row(self, pieces_in_a_row):
     if pieces_in_a_row == 1:

@@ -9,14 +9,63 @@ def ai_player():
   ai_player = AIPlayer('X')
   return ai_player
 
-def test_get_symbol_for_ai(ai_player):
-  assert ai_player.get_symbol() == 'X'
+def test_simulate_move(ai_player):
+  assert ai_player.simulate_move() == None
 
-def test_calculate_points_diagonal(ai_player):
-  player1 = Player('x')
-  player2 = Player('o')
-  board = Board(player1, player2)
-  ai_player.calculate_points_diagonal(board, player1)
+def test_minimax(ai_player):
+  assert ai_player.minimax(None, 5) == None
+
+def test_calculate_points_horizontal(ai_player):
+  player2 = Player('O')
+  board = Board(ai_player, player2)
+  moves_for_horizontal_victory = [(1,1), (1,2), (1,3), (1,4), (1,5)]
+  for move in moves_for_horizontal_victory:
+    board.analyze_move(move)
+    board.switch_current_player()
+  ai_player.calculate_points_horizontal(board, ai_player)
+  assert ai_player.sequences[4] == 1 and ai_player.gaps[4] == 2
+
+def test_calculate_points_vertical(ai_player):
+  player2 = Player('O')
+  board = Board(ai_player, player2)
+  moves_for_vertical_victory = [(1,1), (2,1), (3,1), (4,1), (5,1)]
+  for move in moves_for_vertical_victory:
+    board.analyze_move(move)
+    board.switch_current_player()
+  ai_player.calculate_points_vertical(board, ai_player)
+  assert ai_player.sequences[4] == 1 and ai_player.gaps[4] == 2
+
+def test_calculate_points_diagonal_left_right(ai_player):
+  player2 = Player('O')
+  board = Board(ai_player, player2)
+  moves_for_diagonal_victory = [(6,3), (5,4), (4,3), (3,4), (2,5)]
+  for move in moves_for_diagonal_victory:
+    board.analyze_move(move)
+    board.switch_current_player()
+  ai_player.calculate_points_diagonal_left_right(board, ai_player)
+  assert ai_player.sequences[4] == 1 and ai_player.gaps[4] == 2
+
+# def test_calculate_points_diagonal_left_right_double(ai_player):
+#   player2 = Player('O')
+#   board = Board(ai_player, player2)
+#   moves_for_diagonal_victory = [(1,1), (0,2)]
+#   for move in moves_for_diagonal_victory:
+#     board.analyze_move(move)
+#     board.switch_current_player()
+#   ai_player.calculate_points_diagonal_left_right(board, ai_player)
+#   assert ai_player.sequences[1] == 1 and ai_player.gaps[4] == 2
+
+def test_calculate_points_diagonal_right_left(ai_player):
+  player2 = Player('O')
+  board = Board(ai_player, player2)
+  # DICA REESCREVER COMO SE FOSSE O ALGORITMO DE VERIFICAÇÃO DA ESQUERDA PRA DIREITA
+  # SÓ QUE MUDANDO O LAÇO MAIS INTERNO
+  moves_for_diagonal_victory = [(9,8), (8,7), (7,6), (6,5), (5,4)]
+  for move in moves_for_diagonal_victory:
+    board.analyze_move(move)
+    board.switch_current_player()
+  ai_player.calculate_points_diagonal_right_left(board, ai_player)
+  assert ai_player.sequences[4] == 1 and ai_player.gaps[4] == 2
 
 if __name__ == '__main__':
   import doctest
