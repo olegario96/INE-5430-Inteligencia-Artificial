@@ -77,35 +77,6 @@ class AIPlayer(Player):
     for i in range(0, board.ROWS):
       for j in range(0, board.COLUMNS):
           for k in range(0, 5):
-            if i-k >= 0 and j+k < 15:
-              if not positions[i-k][j+k].is_empty() and positions[i-k][j+k].get_player_from_position() == player:
-                pieces_in_a_row += 1
-              else:
-                if positions[i-k][j+k].is_empty() and pieces_in_a_row == 0:
-                  self.started_with_gap = True
-                elif positions[i-k][j+k].is_empty() and pieces_in_a_row > 0:
-                  self.ended_with_gap = True
-                elif not positions[i-k][j+k].is_empty() and pieces_in_a_row == 0:
-                  self.started_with_gap = False
-                elif not positions[i-k][j+k].is_empty() and pieces_in_a_row > 0:
-                  self.ended_with_gap = False
-                self.evaluate_pieces_in_a_row(pieces_in_a_row)
-                pieces_in_a_row = 0
-            else:
-              self.evaluate_pieces_in_a_row(pieces_in_a_row)
-              pieces_in_a_row = 0
-              break
-      self.started_with_gap = True
-      self.ended_with_gap = True
-      pieces_in_a_row = 0
-
-  def calculate_points_diagonal_right_left(self, board, player):
-    pieces_in_a_row = 0
-    positions = board.get_positions()
-
-    for i in range(0, board.ROWS):
-      for j in range(0, board.COLUMNS):
-          for k in range(0, 5):
             if i+k < 15 and j+k < 15:
               if not positions[i+k][j+k].is_empty() and positions[i+k][j+k].get_player_from_position() == player:
                 pieces_in_a_row += 1
@@ -117,6 +88,36 @@ class AIPlayer(Player):
                 elif not positions[i+k][j+k].is_empty() and pieces_in_a_row == 0:
                   self.started_with_gap = False
                 elif not positions[i+k][j+k].is_empty() and pieces_in_a_row > 0:
+                  self.ended_with_gap = False
+                self.evaluate_pieces_in_a_row(pieces_in_a_row)
+                pieces_in_a_row = 0
+            else:
+              self.evaluate_pieces_in_a_row(pieces_in_a_row)
+              pieces_in_a_row = 0
+              break
+
+      self.started_with_gap = True
+      self.ended_with_gap = True
+      pieces_in_a_row = 0
+
+  def calculate_points_diagonal_right_left(self, board, player):
+    pieces_in_a_row = 0
+    positions = board.get_positions()
+
+    for i in range(0, board.ROWS):
+      for j in range(0, board.COLUMNS):
+          for k in range(0, 5):
+            if i-k >= 0 and j+k < 15:
+              if not positions[i-k][j+k].is_empty() and positions[i-k][j+k].get_player_from_position() == player:
+                pieces_in_a_row += 1
+              else:
+                if positions[i-k][j+k].is_empty() and pieces_in_a_row == 0:
+                  self.started_with_gap = True
+                elif positions[i-k][j+k].is_empty() and pieces_in_a_row > 0:
+                  self.ended_with_gap = True
+                elif not positions[i-k][j+k].is_empty() and pieces_in_a_row == 0:
+                  self.started_with_gap = False
+                elif not positions[i-k][j+k].is_empty() and pieces_in_a_row > 0:
                   self.ended_with_gap = False
                 self.evaluate_pieces_in_a_row(pieces_in_a_row)
                 pieces_in_a_row = 0
@@ -159,6 +160,8 @@ class AIPlayer(Player):
     return calculates_points()
 
   def evaluate_pieces_in_a_row(self, pieces_in_a_row):
+    if pieces_in_a_row == 0:
+      return
     if pieces_in_a_row == 1:
       self.sequences[0] += 1
       if self.started_with_gap:
@@ -184,6 +187,7 @@ class AIPlayer(Player):
       if self.ended_with_gap:
         self.gaps[3] += 1
     elif pieces_in_a_row == 5:
+      print('>>>>>>>>>>>>>>>>>')
       self.sequences[4] += 1
       if self.started_with_gap:
         self.gaps[4] += 1

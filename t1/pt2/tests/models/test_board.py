@@ -25,7 +25,7 @@ def test_analyze_move(board):
 
 def test_switch_current_player(board):
   board.switch_current_player()
-  assert board.player1.is_player_turn()
+  assert board.player1.is_player_turn() and board.get_current_player() == board.player1
 
 def test_check_victory_horizontal(board):
   copy_board = copy.deepcopy(board)
