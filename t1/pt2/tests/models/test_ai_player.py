@@ -11,7 +11,12 @@ def ai_player():
   return ai_player
 
 def test_simulate_move(ai_player):
-  assert ai_player.simulate_move() == None
+  player2 = Player('O')
+  board = Board(ai_player, player2)
+  board.analyze_move((1,1))
+  board.switch_current_player()
+  best_move = ai_player.simulate_move(board, ai_player)
+  assert (2,2) == best_move
 
 def test_minimax(ai_player):
   assert ai_player.minimax(None, 5) == None
