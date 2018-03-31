@@ -96,7 +96,24 @@ class Board(object):
               player_in_previous_position = player_in_current_position
           else:
             i = 0
-    return None
+    for k in range(-(Board.COLUMNS-1),1):
+      i = 0
+      player_in_previous_position = None
+      player_in_current_position = None
+      for row in range(0, Board.ROWS):
+        if (row-k >= 0 and row-k < Board.COLUMNS):
+          if not self.positions[row-k][row].is_empty():
+            player_in_current_position = self.positions[row-k][row].get_player_from_position()
+            if player_in_current_position == player_in_previous_position:
+              i += 1
+              if i == 5:
+                self.match_ended = True
+                return player_in_current_position
+            else:
+              i = 1
+              player_in_previous_position = player_in_current_position
+          else:
+            i = 0
 
   def check_victory_diagonal_right_left(self):
     for k in range(0, Board.ROWS):

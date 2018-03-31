@@ -45,7 +45,7 @@ def test_check_victory_vertical(board):
 
 def test_check_victory_diagonal_left_right(board):
   copy_board = copy.deepcopy(board)
-  moves_for_diagonal_left_right_victory = [(1,1), (2,2), (3,3), (4,4), (5,5)]
+  moves_for_diagonal_left_right_victory = [(2,1), (3,2), (4,3), (5,4), (6,5)]
   for move in moves_for_diagonal_left_right_victory:
     copy_board.analyze_move(move)
     copy_board.switch_current_player()
