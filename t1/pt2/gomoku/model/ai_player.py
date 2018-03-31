@@ -187,22 +187,22 @@ class AIPlayer(Player):
     self.sequences = [0,0,0,0,0]
     self.gaps = [0,0,0,0,0]
 
-  def calcula_value_for_move(self, board):
-    return calculate_points_for_machine(board) - calculate_points_for_human(board)
+  # def calculate_value_for_move(self, board, human_player):
+  #   return calculate_points_for_machine(board) - calculate_points_for_human(board, human_player)
 
   def calculate_points_for_machine(self, board):
-    self.calculate_points_horziontal(board, self)
+    self.calculate_points_horizontal(board, self)
     self.calculate_points_vertical(board, self)
     self.calculate_points_diagonal_left_right(board, self)
     self.calculate_points_diagonal_right_left(board, self)
-    return calculates_points()
+    return self.calculate_points()
 
   def calculate_points_for_human(self, board, human_player):
-    self.calculate_points_horziontal(board, human_player)
+    self.calculate_points_horizontal(board, human_player)
     self.calculate_points_vertical(board, human_player)
     self.calculate_points_diagonal_left_right(board, human_player)
     self.calculate_points_diagonal_right_left(board, human_player)
-    return calculates_points()
+    return self.calculate_points()
 
   def evaluate_pieces_in_a_row(self, pieces_in_a_row):
     if pieces_in_a_row == 0:

@@ -3,6 +3,7 @@ import pytest
 from gomoku.model import AIPlayer
 from gomoku.model import Board
 from gomoku.model import Player
+from random import randrange
 
 @pytest.fixture(scope='session')
 def ai_player():
@@ -45,16 +46,6 @@ def test_calculate_points_diagonal_left_right(ai_player):
   ai_player.calculate_points_diagonal_left_right(board, ai_player)
   assert ai_player.sequences[4] == 3 and ai_player.gaps[4] == 5
 
-def test_calculate_points_diagonal_left_right_double(ai_player):
-  player2 = Player('O')
-  board = Board(ai_player, player2)
-  moves_for_diagonal_victory = [(1,3), (2,4), (3,5)]
-  for move in moves_for_diagonal_victory:
-    board.analyze_move(move)
-    board.switch_current_player()
-  ai_player.calculate_points_diagonal_left_right(board, ai_player)
-  assert ai_player.sequences[2] == 1 and ai_player.gaps[2] == 2
-
 def test_calculate_points_diagonal_right_left(ai_player):
   player2 = Player('O')
   board = Board(ai_player, player2)
@@ -64,6 +55,52 @@ def test_calculate_points_diagonal_right_left(ai_player):
     board.switch_current_player()
   ai_player.calculate_points_diagonal_right_left(board, ai_player)
   assert ai_player.sequences[4] == 4 and ai_player.gaps[4] == 7
+
+def test_calculate_ponits(ai_player):
+  points = ai_player.calculate_points()
+  assert points == 1390536000
+
+def test_restart_sequences_and_gaps(ai_player):
+  ai_player.restart_sequences_and_gaps()
+  assert ai_player.sequences == [0,0,0,0,0] and ai_player.gaps == [0,0,0,0,0]
+def test_calculate_value_for_move(ai_player):
+  assert True
+
+def test_calculate_points_for_machine(ai_player):
+  player2 = Player('O')
+  board = Board(ai_player, player2)
+  moves_for_diagonal_victory = [(1,3), (2,4), (3,5)]
+  for move in moves_for_diagonal_victory:
+    board.analyze_move(move)
+    board.switch_current_player()
+  points = ai_player.calculate_points_for_machine(board)
+  assert points == 18162
+
+def test_calculate_points_for_human(ai_player):
+  player2 = Player('O')
+  board = Board(player2, ai_player)
+  moves_for_diagonal_victory = [(1,3), (2,4), (3,5)]
+  for move in moves_for_diagonal_victory:
+    board.analyze_move(move)
+    board.switch_current_player()
+  points = ai_player.calculate_points_for_human(board, player2)
+  assert points == 18162
+
+def test_evaluate_pieces_in_a_row(ai_player):
+  pieces_in_a_row = 3
+  ai_player.evaluate_pieces_in_a_row(pieces_in_a_row)
+  assert ai_player.sequences[2] == 1
+
+def test_calculate_points_diagonal_left_right_double(ai_player):
+  ai_player.restart_sequences_and_gaps()
+  player2 = Player('O')
+  board = Board(ai_player, player2)
+  moves_for_diagonal_victory = [(1,3), (2,4), (3,5)]
+  for move in moves_for_diagonal_victory:
+    board.analyze_move(move)
+    board.switch_current_player()
+  ai_player.calculate_points_diagonal_left_right(board, ai_player)
+  assert ai_player.sequences[2] == 1 and ai_player.gaps[2] == 2
 
 if __name__ == '__main__':
   import doctest
