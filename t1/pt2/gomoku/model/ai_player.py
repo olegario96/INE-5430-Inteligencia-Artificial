@@ -18,36 +18,44 @@ class AIPlayer(Player):
     self.started_with_gap = False
     self.ended_with_gap = False
 
-  def simulate_move(self, board, player):
-    best_pontuation = 0
-    best_move = None
-    copy_board = copy.deepcopy(board)
-    positions = copy_board.get_positions()
+  def simulate_moves(self, board):
+    moves = set()
+    positions = board.get_positions()
 
     for row in positions:
       for position in row:
         if position.is_empty():
-          piece = Piece(player, position)
-          position.set_piece(piece)
-          if player == self:
-            pontuation = self.calculate_points_for_machine(copy_board)
-          else:
-            pontuation = self.calculate_points_for_human(copy_board)
-          if pontuation > best_pontuation:
-            best_pontuation = pontuation
-            best_move = (position.get_row(), position.get_column())
-          del piece
-          position.set_piece(None)
+          moves.add((position.get_row(), position.get_column()))
 
-    return best_move
+    return moves
 
-  def minimax(self, board, human_player,level=5):
+  def minimax(self, board, human_player, alpha, beta, level=5):
     if level == 0:
-      return self.calculate_points(board, human_player)
+      return self.calculate_value_for_move(board, human_player)
     else:
-      self.simulate_move(board, board.get_current_player())
-      board.analyze_move(move)
-      self.minimax(level-1)
+      moves = self.simulate_moves(board)
+      for move in moves:
+        local_alpha = 0
+        local_beta = 0
+        copy_board = copy.deepcopy(board)
+        copy_board.analyze_move(move)
+        pontuation = self.minimax(copy_board, human_player, alpha, beta, level-1)
+        if level % 2 == 0:
+          local_alpha = pontuation
+          if local_alpha > alpha:
+            alpha = local_alpha
+          if local_alpha > beta:
+            return move
+          else:
+            return alpha
+        else:
+          local_beta = pontuation
+          if local_beta < beta:
+            local_beta = beta
+          if alpha > local_beta:
+            return move
+          else:
+            return beta
 
   def calculate_points_horizontal(self, board, player):
     pieces_in_a_row = 0
@@ -215,7 +223,8 @@ class AIPlayer(Player):
     self.gaps = [0,0,0,0,0]
 
   def calculate_value_for_move(self, board, human_player):
-    return calculate_points_for_machine(board) - calculate_points_for_human(board, human_player)
+    pontuation = self.calculate_points_for_machine(board) - self.calculate_points_for_human(board, human_player)
+    return pontuation
 
   def calculate_points_for_machine(self, board):
     self.calculate_points_horizontal(board, self)
