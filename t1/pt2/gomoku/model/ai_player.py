@@ -71,60 +71,108 @@ class AIPlayer(Player):
       pieces_in_a_row = 0
 
   def calculate_points_diagonal_left_right(self, board, player):
-    pieces_in_a_row = 0
     positions = board.get_positions()
+    pieces_in_a_row = 0
 
-    for i in range(0, board.ROWS):
-      for j in range(0, board.COLUMNS):
-          for k in range(0, 5):
-            if i+k < 15 and j+k < 15:
-              if not positions[i+k][j+k].is_empty() and positions[i+k][j+k].get_player_from_position() == player:
-                pieces_in_a_row += 1
-              else:
-                if positions[i+k][j+k].is_empty() and pieces_in_a_row == 0:
-                  self.started_with_gap = True
-                elif positions[i+k][j+k].is_empty() and pieces_in_a_row > 0:
-                  self.ended_with_gap = True
-                elif not positions[i+k][j+k].is_empty() and pieces_in_a_row == 0:
-                  self.started_with_gap = False
-                elif not positions[i+k][j+k].is_empty() and pieces_in_a_row > 0:
-                  self.ended_with_gap = False
-                self.evaluate_pieces_in_a_row(pieces_in_a_row)
-                pieces_in_a_row = 0
+    for k in range(-(Board.COLUMNS-1),1):
+      pieces_in_a_row = 0
+      for row in range(0, Board.ROWS):
+        if (row-k >= 0 and row-k < Board.COLUMNS):
+          if not positions[row][row - k].is_empty():
+            if positions[row][row - k].get_player_from_position() == player:
+              pieces_in_a_row +=1
             else:
+              if pieces_in_a_row == 0:
+                self.started_with_gap = False
+              else:
+                self.ended_with_gap = False
               self.evaluate_pieces_in_a_row(pieces_in_a_row)
               pieces_in_a_row = 0
-              break
+          else:
+            if pieces_in_a_row == 0:
+              self.started_with_gap = True
+            else:
+              self.ended_with_gap = True
+            self.evaluate_pieces_in_a_row(pieces_in_a_row)
+            pieces_in_a_row = 0
       self.started_with_gap = False
       self.ended_with_gap = False
+
+    for k in range(-(Board.COLUMNS-1),1):
       pieces_in_a_row = 0
+      for row in range(0, Board.ROWS):
+        if (row-k >= 0 and row-k < Board.COLUMNS):
+          if not positions[row-k][row].is_empty():
+            if positions[row-k][row].get_player_from_position() == player:
+              pieces_in_a_row += 1
+            else:
+              if pieces_in_a_row == 0:
+                self.started_with_gap = False
+              else:
+                self.ended_with_gap = False
+              self.evaluate_pieces_in_a_row(pieces_in_a_row)
+              pieces_in_a_row = 0
+          else:
+            if pieces_in_a_row == 0:
+              self.started_with_gap = True
+            else:
+              self.ended_with_gap = True
+            self.evaluate_pieces_in_a_row(pieces_in_a_row)
+            pieces_in_a_row = 0
+      self.started_with_gap = False
+      self.ended_with_gap = False
 
   def calculate_points_diagonal_right_left(self, board, player):
-    pieces_in_a_row = 0
     positions = board.get_positions()
+    pieces_in_a_row = 0
 
-    for i in range(0, board.ROWS):
-      for j in range(0, board.COLUMNS):
-          for k in range(0, 5):
-            if i-k >= 0 and j+k < 15:
-              if not positions[i-k][j+k].is_empty() and positions[i-k][j+k].get_player_from_position() == player:
-                pieces_in_a_row += 1
-              else:
-                if positions[i-k][j+k].is_empty() and pieces_in_a_row == 0:
-                  self.started_with_gap = True
-                elif positions[i-k][j+k].is_empty() and pieces_in_a_row > 0:
-                  self.ended_with_gap = True
-                elif not positions[i-k][j+k].is_empty() and pieces_in_a_row == 0:
-                  self.started_with_gap = False
-                elif not positions[i-k][j+k].is_empty() and pieces_in_a_row > 0:
-                  self.ended_with_gap = False
+    for k in range(0, Board.ROWS):
+      pieces_in_a_row = 0
+      for column in range(0, k+1):
+        row = k - column
+        if not positions[row][column].is_empty():
+          if positions[row][column].get_player_from_position() == player:
+            pieces_in_a_row += 1
+          else:
+            if pieces_in_a_row == 0:
+              self.started_with_gap = False
             else:
-                self.evaluate_pieces_in_a_row(pieces_in_a_row)
-                pieces_in_a_row = 0
-                break
+              self.ended_with_gap = False
+            self.evaluate_pieces_in_a_row(pieces_in_a_row)
+            pieces_in_a_row = 0
+        else:
+          if pieces_in_a_row == 0:
+            self.started_with_gap = True
+          else:
+            self.ended_with_gap = True
+          self.evaluate_pieces_in_a_row(pieces_in_a_row)
+          pieces_in_a_row = 0
       self.started_with_gap = False
       self.ended_with_gap = False
+
+    for k in range(Board.ROWS-2, -1,-1):
       pieces_in_a_row = 0
+      for column in range(0, k+1):
+        row = k - column
+        if not positions[Board.COLUMNS - column - 1][Board.ROWS - row -1].is_empty():
+          if positions[Board.COLUMNS - column - 1][Board.ROWS - row -1].get_player_from_position() == player:
+            pieces_in_a_row += 1
+          else:
+            if pieces_in_a_row == 0:
+              self.started_with_gap = False
+            else:
+              self.ended_with_gap = False
+            self.evaluate_pieces_in_a_row(pieces_in_a_row)
+            pieces_in_a_row = 0
+        else:
+          if pieces_in_a_row == 0:
+            self.started_with_gap = True
+          else:
+            self.ended_with_gap = True
+          self.evaluate_pieces_in_a_row(pieces_in_a_row)
+          pieces_in_a_row = 0
+      self.started_with_gap = False
+      self.ended_with_gap = False
 
   def calculate_points(self):
     unary_sequences = 1 * self.sequences[0] * self.gaps[0]

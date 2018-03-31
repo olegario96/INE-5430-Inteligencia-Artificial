@@ -115,6 +115,8 @@ class Board(object):
           else:
             i = 0
 
+    return None
+
   def check_victory_diagonal_right_left(self):
     for k in range(0, Board.ROWS):
       i = 0
