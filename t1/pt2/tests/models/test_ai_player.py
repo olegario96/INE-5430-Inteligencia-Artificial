@@ -63,7 +63,7 @@ def test_calculate_points_diagonal_right_left(ai_player):
     board.analyze_move(move)
     board.switch_current_player()
   ai_player.calculate_points_diagonal_right_left(board, ai_player)
-  assert ai_player.sequences[4] == 3 and ai_player.gaps[4] == 7
+  assert ai_player.sequences[4] == 4 and ai_player.gaps[4] == 7
 
 if __name__ == '__main__':
   import doctest

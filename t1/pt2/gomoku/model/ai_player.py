@@ -95,7 +95,6 @@ class AIPlayer(Player):
               self.evaluate_pieces_in_a_row(pieces_in_a_row)
               pieces_in_a_row = 0
               break
-
       self.started_with_gap = False
       self.ended_with_gap = False
       pieces_in_a_row = 0
@@ -119,12 +118,10 @@ class AIPlayer(Player):
                   self.started_with_gap = False
                 elif not positions[i-k][j+k].is_empty() and pieces_in_a_row > 0:
                   self.ended_with_gap = False
+            else:
                 self.evaluate_pieces_in_a_row(pieces_in_a_row)
                 pieces_in_a_row = 0
-            else:
-              self.evaluate_pieces_in_a_row(pieces_in_a_row)
-              pieces_in_a_row = 0
-              break
+                break
       self.started_with_gap = False
       self.ended_with_gap = False
       pieces_in_a_row = 0
