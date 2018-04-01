@@ -20,43 +20,40 @@ class AIPlayer(Player):
 
   def simulate_moves(self, board):
     moves = set()
-    positions = board.get_positions()
     last_move = board.get_last_move()
-
-    for i in range(last_move[0]-2, last_move[0]+2):
-      for j in range(last_move[1]-2, last_move[1]+2):
+    for i in range(last_move[0]-3, last_move[0]+3):
+      for j in range(last_move[1]-3, last_move[1]+3):
         if i >= 0 and i < 15 and j >=0 and j < 15:
-          if positions[i][j].is_empty():
-            moves.add((positions[i][j].get_row(), positions[i][j].get_column()))
-
+          if board.get_positions()[i][j].is_empty():
+            moves.add((board.get_positions()[i][j].get_row(), board.get_positions()[i][j].get_column()))
     return moves
 
   def minimax(self, board, human_player, alpha, beta, level=3):
     if level == 0:
       return (self.calculate_value_for_move(board, human_player), None)
     else:
-      local_alpha = alpha
-      local_beta = beta
       move_ = None
       for move in self.simulate_moves(board):
         move_ = move
         board.remove_last_move(board.last_move_for_ai)
         board.check_move(move)
-        pontuation  = self.minimax(board, human_player, AIPlayer.global_alpha, AIPlayer.global_beta, level-1)[0]
+        pontuation  = self.minimax(board, human_player, alpha, beta, level-1)[0]
         if level % 2 == 1:
-          if pontuation > local_alpha:
-            local_alpha = pontuation
-          if local_alpha > beta:
-            return (local_alpha, move)
+          if pontuation > alpha:
+            alpha = pontuation
+          if alpha > beta:
+            print("podei")
+            return (alpha, move)
         else:
-          if pontuation < local_beta:
-            local_beta = pontuation
-          if local_alpha > local_beta:
-            return (local_alpha, move)
+          if pontuation < beta:
+            beta = pontuation
+          if beta < alpha:
+            print("podei")
+            return (beta, move)
       if level % 2 == 1:
-        return (local_alpha, move_)
+        return (alpha, move_)
       else:
-        return (local_alpha, move_)
+        return (beta, move_)
 
   def calculate_points_horizontal(self, board, player):
     pieces_in_a_row = 0
