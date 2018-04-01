@@ -32,7 +32,6 @@ class Board(object):
         piece = Piece(self.current_player, position)
         position.set_piece(piece)
         self.switch_current_player()
-      print(self.get_current_player())
 
   def check_move(self, move):
     i, j = move
