@@ -26,8 +26,7 @@ class GomokuController(object):
 
   def move_for_ai(self):
     move = self.player2.minimax(self.board, self.player1, self.player2.global_alpha, self.player2.global_beta)
-    print(move)
-    self.analyze_move((1,1))
+    self.analyze_move(move[1])
 
   def get_board(self):
     return self.board

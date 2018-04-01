@@ -10,6 +10,7 @@ class Board(object):
     self.player2 = player2
     self.current_player = self.player1
     self.match_ended = False
+    self.last_move = (0,0)
     self.positions = []
     self.initialize_positions()
 
@@ -25,6 +26,8 @@ class Board(object):
       i, j = move
       position = self.positions[i][j]
       if position.is_empty():
+        if self.current_player == self.player1:
+          self.last_move = move
         piece = Piece(self.current_player, position)
         position.set_piece(piece)
         self.switch_current_player()
@@ -179,3 +182,6 @@ class Board(object):
 
   def get_positions(self):
     return self.positions
+
+  def get_last_move(self):
+    return self.last_move

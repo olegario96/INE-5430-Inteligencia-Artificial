@@ -8,8 +8,8 @@ from gomoku.model import Player
 class AIPlayer(Player):
   MACHINE_STR = 'MACHINE'
   HUMAN_STR = 'HUMAN'
-  global_alpha = float('-Inf')
-  global_beta = float('Inf')
+  global_alpha = -999999
+  global_beta = 999999
 
   def __init__(self, player_symbol):
     super(AIPlayer, self).__init__(player_symbol)
@@ -17,42 +17,45 @@ class AIPlayer(Player):
     self.gaps = [0,0,0,0,0]
     self.started_with_gap = False
     self.ended_with_gap = False
+    self.i = 1
 
   def simulate_moves(self, board):
     moves = set()
     positions = board.get_positions()
+    last_move = board.get_last_move()
 
-    for i in range(0, board.ROWS-10):
-      for j in range(0, board.COLUMNS-10):
-        if positions[i][j].is_empty():
-          moves.add((positions[i][j].get_row(), positions[i][j].get_column()))
+    for i in range(last_move[0]-3, last_move[0]+3):
+      for j in range(last_move[1]-3, last_move[1]+3):
+        if i >= 0 and i < 15 and j >=0 and j < 15:
+          if positions[i][j].is_empty():
+            moves.add((positions[i][j].get_row(), positions[i][j].get_column()))
 
     return moves
 
   def minimax(self, board, human_player, alpha, beta, level=3):
     if level == 0:
-      return self.calculate_value_for_move(board, human_player)
+      return (self.calculate_value_for_move(board, human_player), None)
     else:
       local_alpha = alpha
       local_beta = beta
       for move in self.simulate_moves(board):
         copy_board = copy.deepcopy(board)
         copy_board.analyze_move(move)
-        pontuation = self.minimax(copy_board, human_player, AIPlayer.global_alpha, AIPlayer.global_beta, level-1)
+        pontuation = self.minimax(copy_board, human_player, AIPlayer.global_alpha, AIPlayer.global_beta, level-1)[0]
         if level % 2 == 1:
           if pontuation > local_alpha:
             local_alpha = pontuation
           if local_alpha > beta:
-            return local_alpha
+            return (local_alpha, move)
         else:
           if pontuation < local_beta:
             local_beta = pontuation
           if local_alpha > local_beta:
-            return local_alpha
+            return (local_alpha, move)
       if level % 2 == 1:
-        return local_alpha
+        return (local_alpha, move)
       else:
-        return local_beta
+        return (local_alpha, move)
 
   def calculate_points_horizontal(self, board, player):
     pieces_in_a_row = 0
