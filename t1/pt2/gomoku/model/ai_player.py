@@ -22,38 +22,37 @@ class AIPlayer(Player):
     moves = set()
     positions = board.get_positions()
 
-    for row in positions:
-      for position in row:
-        if position.is_empty():
-          moves.add((position.get_row(), position.get_column()))
+    for i in range(0, board.ROWS-10):
+      for j in range(0, board.COLUMNS-10):
+        if positions[i][j].is_empty():
+          moves.add((positions[i][j].get_row(), positions[i][j].get_column()))
 
     return moves
 
-  def minimax(self, board, human_player, alpha, beta, level=5):
+  def minimax(self, board, human_player, alpha, beta, level=3):
     if level == 0:
       return self.calculate_value_for_move(board, human_player)
     else:
-      moves = self.simulate_moves(board)
-      for move in moves:
-        local_alpha = alpha
-        local_beta = beta
+      local_alpha = alpha
+      local_beta = beta
+      for move in self.simulate_moves(board):
         copy_board = copy.deepcopy(board)
         copy_board.analyze_move(move)
-        pontuation = self.minimax(copy_board, human_player, local_alpha, local_beta, level-1)
-        if level % 2 == 0:
-          if pontuation > alpha:
-            local_alpha = alpha
+        pontuation = self.minimax(copy_board, human_player, AIPlayer.global_alpha, AIPlayer.global_beta, level-1)
+        if level % 2 == 1:
+          if pontuation > local_alpha:
+            local_alpha = pontuation
           if local_alpha > beta:
-            return move
-          else:
             return local_alpha
         else:
-          if beta < pontuation:
+          if pontuation < local_beta:
             local_beta = pontuation
-          if alpha > local_beta:
-            return move
-          else:
-            return local_beta
+          if local_alpha > local_beta:
+            return local_alpha
+      if level % 2 == 1:
+        return local_alpha
+      else:
+        return local_beta
 
   def calculate_points_horizontal(self, board, player):
     pieces_in_a_row = 0

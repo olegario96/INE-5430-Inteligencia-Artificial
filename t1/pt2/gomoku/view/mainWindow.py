@@ -75,5 +75,5 @@ class MainWindow(QWidget):
     for button_row, row in zip(self.position_buttons, self.gomoku_controller.get_board().get_positions()):
       for button, position in zip(button_row, row):
         if not position.is_empty():
-          button.setText(position.get_player_from_position().get_symbol)
+          button.setText(position.get_player_from_position().get_symbol())
 
