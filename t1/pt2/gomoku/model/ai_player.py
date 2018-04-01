@@ -35,27 +35,25 @@ class AIPlayer(Player):
     else:
       moves = self.simulate_moves(board)
       for move in moves:
-        local_alpha = 0
-        local_beta = 0
+        local_alpha = alpha
+        local_beta = beta
         copy_board = copy.deepcopy(board)
         copy_board.analyze_move(move)
-        pontuation = self.minimax(copy_board, human_player, alpha, beta, level-1)
+        pontuation = self.minimax(copy_board, human_player, local_alpha, local_beta, level-1)
         if level % 2 == 0:
-          local_alpha = pontuation
-          if local_alpha > alpha:
-            alpha = local_alpha
+          if pontuation > alpha:
+            local_alpha = alpha
           if local_alpha > beta:
             return move
           else:
-            return alpha
+            return local_alpha
         else:
-          local_beta = pontuation
-          if local_beta < beta:
-            local_beta = beta
+          if beta < pontuation:
+            local_beta = pontuation
           if alpha > local_beta:
             return move
           else:
-            return beta
+            return local_beta
 
   def calculate_points_horizontal(self, board, player):
     pieces_in_a_row = 0

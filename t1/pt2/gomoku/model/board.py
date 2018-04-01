@@ -22,7 +22,6 @@ class Board(object):
 
   def analyze_move(self, move):
     if not self.match_ended:
-      print(move)
       i, j = move
       position = self.positions[i][j]
       if position.is_empty():
