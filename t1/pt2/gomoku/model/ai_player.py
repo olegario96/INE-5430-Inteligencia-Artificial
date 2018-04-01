@@ -17,6 +17,8 @@ class AIPlayer(Player):
     self.gaps = [0,0,0,0,0]
     self.started_with_gap = False
     self.ended_with_gap = False
+    self.alpha = AIPlayer.global_alpha
+    self.beta = AIPlayer.global_beta
 
   def simulate_moves(self, board):
     moves = set()
@@ -34,21 +36,22 @@ class AIPlayer(Player):
     else:
       move_ = None
       for move in self.simulate_moves(board):
-        move_ = move
         board.remove_last_move(board.last_move_for_ai)
         board.check_move(move)
-        pontuation  = self.minimax(board, human_player, alpha, beta, level-1)[0]
+        pontuation = self.minimax(board, human_player, alpha, beta, level-1)[0]
         if level % 2 == 1:
           if pontuation > alpha:
+            move_ = move
             alpha = pontuation
-          if alpha > beta:
-            print("podei")
+          if alpha >= beta:
+            print('>>>>>>>>>')
             return (alpha, move)
         else:
           if pontuation < beta:
+            move_ = move
             beta = pontuation
-          if beta < alpha:
-            print("podei")
+          if beta <= alpha:
+            print('>>>>>>>>>')
             return (beta, move)
       if level % 2 == 1:
         return (alpha, move_)
@@ -208,11 +211,11 @@ class AIPlayer(Player):
       self.ended_with_gap = False
 
   def calculate_points(self):
-    unary_sequences = 1 * self.sequences[0] + self.gaps[0]
-    double_sequences = 60 * 1 * self.sequences[1] + self.gaps[1]
-    triple_sequences = 150 * 60 * 1 * self.sequences[2] + self.gaps[2]
-    quadruple_sequences = 89 * 150 * 60 * 1 * self.sequences[3] + self.gaps[3]
-    quintuple_sequences = 62 * 89 * 150 * 60 * 1 * self.sequences[4] + self.gaps[4]
+    unary_sequences = 1 * self.sequences[0] * self.gaps[0]
+    double_sequences = 60 * 1 * self.sequences[1] * self.gaps[1]
+    triple_sequences = 150 * 60 * 1 * self.sequences[2] * self.gaps[2]
+    quadruple_sequences = 89 * 150 * 60 * 1 * self.sequences[3] * self.gaps[3]
+    quintuple_sequences = 62 * 89 * 150 * 60 * 1 * self.sequences[4] * self.gaps[4]
     self.restart_sequences_and_gaps()
     return unary_sequences + double_sequences + triple_sequences + quadruple_sequences + quintuple_sequences
 
