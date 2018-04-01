@@ -24,3 +24,6 @@ class Position(object):
 
   def clear(self):
     self.piece = None
+
+  def get_piece(self):
+    return self.piece

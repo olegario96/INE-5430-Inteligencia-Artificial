@@ -8,8 +8,8 @@ from gomoku.model import Player
 class AIPlayer(Player):
   MACHINE_STR = 'MACHINE'
   HUMAN_STR = 'HUMAN'
-  global_alpha = -999999
-  global_beta = 999999
+  global_alpha = float('-Inf')
+  global_beta = float('Inf')
 
   def __init__(self, player_symbol):
     super(AIPlayer, self).__init__(player_symbol)
@@ -17,15 +17,14 @@ class AIPlayer(Player):
     self.gaps = [0,0,0,0,0]
     self.started_with_gap = False
     self.ended_with_gap = False
-    self.i = 1
 
   def simulate_moves(self, board):
     moves = set()
     positions = board.get_positions()
     last_move = board.get_last_move()
 
-    for i in range(last_move[0]-3, last_move[0]+3):
-      for j in range(last_move[1]-3, last_move[1]+3):
+    for i in range(last_move[0]-2, last_move[0]+2):
+      for j in range(last_move[1]-2, last_move[1]+2):
         if i >= 0 and i < 15 and j >=0 and j < 15:
           if positions[i][j].is_empty():
             moves.add((positions[i][j].get_row(), positions[i][j].get_column()))
@@ -38,10 +37,12 @@ class AIPlayer(Player):
     else:
       local_alpha = alpha
       local_beta = beta
+      move_ = None
       for move in self.simulate_moves(board):
-        copy_board = copy.deepcopy(board)
-        copy_board.analyze_move(move)
-        pontuation = self.minimax(copy_board, human_player, AIPlayer.global_alpha, AIPlayer.global_beta, level-1)[0]
+        move_ = move
+        board.remove_last_move(board.last_move_for_ai)
+        board.check_move(move)
+        pontuation  = self.minimax(board, human_player, AIPlayer.global_alpha, AIPlayer.global_beta, level-1)[0]
         if level % 2 == 1:
           if pontuation > local_alpha:
             local_alpha = pontuation
@@ -53,9 +54,9 @@ class AIPlayer(Player):
           if local_alpha > local_beta:
             return (local_alpha, move)
       if level % 2 == 1:
-        return (local_alpha, move)
+        return (local_alpha, move_)
       else:
-        return (local_alpha, move)
+        return (local_alpha, move_)
 
   def calculate_points_horizontal(self, board, player):
     pieces_in_a_row = 0
@@ -210,11 +211,11 @@ class AIPlayer(Player):
       self.ended_with_gap = False
 
   def calculate_points(self):
-    unary_sequences = 1 * self.sequences[0] * self.gaps[0]
-    double_sequences = 60 * 1 * self.sequences[1]* self.gaps[1]
-    triple_sequences = 150 * 60 * 1 * self.sequences[2]* self.gaps[2]
-    quadruple_sequences = 89 * 150 * 60 * 1 * self.sequences[3]* self.gaps[3]
-    quintuple_sequences = 62 * 89 * 150 * 60 * 1 * self.sequences[4]* self.gaps[4]
+    unary_sequences = 1 * self.sequences[0] + self.gaps[0]
+    double_sequences = 60 * 1 * self.sequences[1] + self.gaps[1]
+    triple_sequences = 150 * 60 * 1 * self.sequences[2] + self.gaps[2]
+    quadruple_sequences = 89 * 150 * 60 * 1 * self.sequences[3] + self.gaps[3]
+    quintuple_sequences = 62 * 89 * 150 * 60 * 1 * self.sequences[4] + self.gaps[4]
     self.restart_sequences_and_gaps()
     return unary_sequences + double_sequences + triple_sequences + quadruple_sequences + quintuple_sequences
 

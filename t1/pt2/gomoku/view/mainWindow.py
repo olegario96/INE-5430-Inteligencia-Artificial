@@ -1,6 +1,7 @@
 import itertools
 from functools import partial
 from PyQt5 import QtCore
+from PyQt5.QtWidgets import QApplication
 from PyQt5.QtWidgets import QGridLayout
 from PyQt5.QtWidgets import QLabel
 from PyQt5.QtWidgets import QPushButton
@@ -49,6 +50,7 @@ class MainWindow(QWidget):
       player = self.gomoku_controller.analyze_move(move)
       self.position_buttons[i][j].setText(symbol)
       self.update_label(player)
+      QApplication.processEvents()
       self.ai_turn()
 
   def button_restart_clicked(self):
