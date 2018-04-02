@@ -23,8 +23,8 @@ class AIPlayer(Player):
   def simulate_moves(self, board):
     moves = set()
     last_move = board.get_last_move()
-    for i in range(last_move[0]-3, last_move[0]+3):
-      for j in range(last_move[1]-3, last_move[1]+3):
+    for i in range(last_move[0]-4, last_move[0]+3):
+      for j in range(last_move[1]-3, last_move[1]+4):
         if i >= 0 and i < 15 and j >=0 and j < 15:
           if board.get_positions()[i][j].is_empty():
             moves.add((board.get_positions()[i][j].get_row(), board.get_positions()[i][j].get_column()))
@@ -44,14 +44,12 @@ class AIPlayer(Player):
             move_ = move
             alpha = pontuation
           if alpha >= beta:
-            print('>>>>>>>>>')
             return (alpha, move)
         else:
           if pontuation < beta:
             move_ = move
             beta = pontuation
           if beta <= alpha:
-            print('>>>>>>>>>')
             return (beta, move)
       if level % 2 == 1:
         return (alpha, move_)
@@ -211,11 +209,11 @@ class AIPlayer(Player):
       self.ended_with_gap = False
 
   def calculate_points(self):
-    unary_sequences = 1 * self.sequences[0] * self.gaps[0]
-    double_sequences = 60 * 1 * self.sequences[1] * self.gaps[1]
-    triple_sequences = 150 * 60 * 1 * self.sequences[2] * self.gaps[2]
-    quadruple_sequences = 89 * 150 * 60 * 1 * self.sequences[3] * self.gaps[3]
-    quintuple_sequences = 62 * 89 * 150 * 60 * 1 * self.sequences[4] * self.gaps[4]
+    unary_sequences = 1 * self.sequences[0] + self.gaps[0]
+    double_sequences = 60 * 1 * self.sequences[1] + self.gaps[1]
+    triple_sequences = 150 * 60 * 1 * self.sequences[2] + self.gaps[2]
+    quadruple_sequences = 89 * 150 * 60 * 1 * self.sequences[3] + self.gaps[3]
+    quintuple_sequences = 62 * 89 * 150 * 60 * 1 * self.sequences[4] + self.gaps[4]
     self.restart_sequences_and_gaps()
     return unary_sequences + double_sequences + triple_sequences + quadruple_sequences + quintuple_sequences
 
