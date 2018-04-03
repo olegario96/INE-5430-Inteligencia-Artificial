@@ -11,7 +11,7 @@ class Board(object):
     self.current_player = self.player1
     self.match_ended = False
     self.last_move = (0,0)
-    self.last_move_for_ai = (0,0)
+    self.moves = []
     self.positions = []
     self.initialize_positions()
 
@@ -27,22 +27,21 @@ class Board(object):
       i, j = move
       position = self.positions[i][j]
       if position.is_empty():
-        if self.current_player == self.player1:
-          self.last_move = move
+        self.last_move = move
         piece = Piece(self.current_player, position)
         position.set_piece(piece)
         self.switch_current_player()
 
-  def check_move(self, move):
+  def check_move(self, move, player):
     i, j = move
     position = self.positions[i][j]
     if position.is_empty():
-      self.last_move_for_ai = move
-      piece = Piece(self.current_player, position)
+      self.moves.append(move)
+      piece = Piece(player, position)
       position.set_piece(piece)
 
-  def remove_last_move(self, move):
-    i, j = move
+  def remove_last_move(self):
+    i, j = self.moves.pop()
     piece = self.positions[i][j].clear()
 
   def switch_current_player(self):

@@ -1,4 +1,3 @@
-import copy
 import itertools
 from math import inf
 from gomoku.model import Board
@@ -21,8 +20,8 @@ class AIPlayer(Player):
     self.beta = AIPlayer.global_beta
 
   def simulate_moves(self, board):
-    moves = set()
     last_move = board.get_last_move()
+    moves = set()
     for i in range(last_move[0]-3, last_move[0]+3):
       for j in range(last_move[1]-3, last_move[1]+3):
         if i >= 0 and i < 15 and j >=0 and j < 15:
@@ -36,21 +35,24 @@ class AIPlayer(Player):
     else:
       move_ = None
       for move in self.simulate_moves(board):
-        board.remove_last_move(board.last_move_for_ai)
-        board.check_move(move)
+        if level % 2 == 1:
+          board.check_move(move, self)
+        else:
+          board.check_move(move, human_player)
         pontuation = self.minimax(board, human_player, alpha, beta, level-1)[0]
+        board.remove_last_move()
         if level % 2 == 1:
           if pontuation > alpha:
             move_ = move
             alpha = pontuation
           if alpha >= beta:
-            return (alpha, move)
+            return (alpha, move_)
         else:
           if pontuation < beta:
             move_ = move
             beta = pontuation
           if beta <= alpha:
-            return (beta, move)
+            return (beta, move_)
       if level % 2 == 1:
         return (alpha, move_)
       else:
