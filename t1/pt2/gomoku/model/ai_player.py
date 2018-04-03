@@ -23,8 +23,8 @@ class AIPlayer(Player):
   def simulate_moves(self, board):
     moves = set()
     last_move = board.get_last_move()
-    for i in range(last_move[0]-4, last_move[0]+3):
-      for j in range(last_move[1]-3, last_move[1]+4):
+    for i in range(last_move[0]-3, last_move[0]+3):
+      for j in range(last_move[1]-3, last_move[1]+3):
         if i >= 0 and i < 15 and j >=0 and j < 15:
           if board.get_positions()[i][j].is_empty():
             moves.add((board.get_positions()[i][j].get_row(), board.get_positions()[i][j].get_column()))
