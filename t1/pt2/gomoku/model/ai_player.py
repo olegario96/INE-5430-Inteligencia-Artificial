@@ -21,10 +21,10 @@ class AIPlayer(Player):
     self.beta = AIPlayer.global_beta
 
   def simulate_moves(self, board):
-    moves = set()
     last_move = board.get_last_move()
-    for i in range(last_move[0]-4, last_move[0]+3):
-      for j in range(last_move[1]-3, last_move[1]+4):
+    moves = set()
+    for i in range(last_move[0]-3, last_move[0]+3):
+      for j in range(last_move[1]-3, last_move[1]+3):
         if i >= 0 and i < 15 and j >=0 and j < 15:
           if board.get_positions()[i][j].is_empty():
             moves.add((board.get_positions()[i][j].get_row(), board.get_positions()[i][j].get_column()))
@@ -37,20 +37,23 @@ class AIPlayer(Player):
       move_ = None
       for move in self.simulate_moves(board):
         board.remove_last_move(board.last_move_for_ai)
-        board.check_move(move)
+        if level % 2 == 1:
+          board.check_move(move, self)
+        else:
+          board.check_move(move, human_player)
         pontuation = self.minimax(board, human_player, alpha, beta, level-1)[0]
         if level % 2 == 1:
           if pontuation > alpha:
             move_ = move
             alpha = pontuation
           if alpha >= beta:
-            return (alpha, move)
+            return (alpha, move_)
         else:
           if pontuation < beta:
             move_ = move
             beta = pontuation
           if beta <= alpha:
-            return (beta, move)
+            return (beta, move_)
       if level % 2 == 1:
         return (alpha, move_)
       else:

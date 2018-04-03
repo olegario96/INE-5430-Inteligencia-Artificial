@@ -33,12 +33,12 @@ class Board(object):
         position.set_piece(piece)
         self.switch_current_player()
 
-  def check_move(self, move):
+  def check_move(self, move, player):
     i, j = move
     position = self.positions[i][j]
     if position.is_empty():
       self.last_move_for_ai = move
-      piece = Piece(self.current_player, position)
+      piece = Piece(player, position)
       position.set_piece(piece)
 
   def remove_last_move(self, move):
