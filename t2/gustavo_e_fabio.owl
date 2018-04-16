@@ -27,8 +27,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#carries">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#carry_by"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
     </owl:ObjectProperty>
     
 
@@ -37,8 +35,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#carry_by">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
     </owl:ObjectProperty>
     
 
@@ -48,8 +44,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#drives"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vehicle"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
     </owl:ObjectProperty>
     
 
@@ -64,13 +58,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#has_profile -->
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#has_part -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#has_profile">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#has_part">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#identify"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#profile"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#part_of"/>
     </owl:ObjectProperty>
     
 
@@ -85,31 +77,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#identify -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#identify">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#profile"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#is_part_of -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#is_part_of">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#located_at -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#located_at">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
     </owl:ObjectProperty>
     
@@ -120,7 +92,15 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mounted_by">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorized"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#part_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#part_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -129,9 +109,6 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#produced_at">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#produces"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
     </owl:ObjectProperty>
     
 
@@ -142,27 +119,6 @@
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#transport -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#transport">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#transported_by"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#transported_by -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#transported_by">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus"/>
     </owl:ObjectProperty>
     
 
@@ -189,10 +145,9 @@
     <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
 
     <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </rdf:Description>
     
@@ -209,24 +164,183 @@
     
 
 
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker -->
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#argentina -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#argentina">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#atego -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#atego">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#old_man"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bean -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bean">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
+    </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vehicle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#has_part"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheels"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vehicle"/>
     </owl:Class>
     
 
 
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus -->
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle_models -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorized"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle_models"/>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#biz110 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#biz110">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#playboy"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#blue_angels -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#blue_angels">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#brazil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#brazil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus_models -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus_models"/>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cadete -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cadete">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#playboy"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#camaro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#camaro">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#playboy"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#canada -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#canada">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#captur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#captur">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#valley"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models"/>
     </owl:Class>
     
 
@@ -234,8 +348,190 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car">
-        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorized"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#has_part"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheels"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorized"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models"/>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cargo1317 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cargo1317">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cuckhold"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#celta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#celta">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#malaco"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cg160 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cg160">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#malaco"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#checky -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#checky">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#woman"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#chile -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#chile">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#china -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#china">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#civic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#civic">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#old_man"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colli -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colli">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#malaco"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colli_ultimate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colli_ultimate">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#malaco"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colorado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colorado">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fat"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corn -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corn">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
     </owl:Class>
     
 
@@ -246,16 +542,333 @@
     
 
 
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cuckhold -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cuckhold">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#diablos -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#diablos">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#dire_wolves -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#dire_wolves">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#druids_north -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#druids_north">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#dwarf -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#dwarf">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#england -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#england">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#etios -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#etios">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#old_man"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ferrari -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ferrari">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fiat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fiat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
     
 
 
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ford -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ford">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fox -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fox">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#checky"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#free_souls -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#free_souls">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#freeride -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#freeride">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#malaco"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#general_motors -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#general_motors">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#gts -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#gts">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#malaco"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#headbanger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#headbanger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#hells_angels -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#hells_angels">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#indoor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#indoor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#headbanger"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#italy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#italy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#japan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#japan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#jeep -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#jeep">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorized"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#has_part"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheels"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorized"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart-mini -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart-mini">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#dwarf"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart_models -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart_models"/>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#lone_legion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#lone_legion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#malaco -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#malaco">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#woman"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motoboy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motoboy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man"/>
     </owl:Class>
     
 
@@ -263,6 +876,18 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorized"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#has_part"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheels"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorized"/>
     </owl:Class>
     
@@ -274,6 +899,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_models -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_models"/>
+    
+
+
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorized -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorized">
@@ -282,16 +913,149 @@
     
 
 
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#profile -->
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#nissan -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#profile"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#nissan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#oh-1626l -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#oh-1626l">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus_models"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#paradiso1550"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#old_man -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#old_man">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#paradiso1550 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#paradiso1550">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#playboy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#playboy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#potato -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#potato">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rebels -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rebels">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#scania -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#scania">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#south_korea -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#south_korea">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#spain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#spain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#toyota -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#toyota">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorized"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#has_part"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheels"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorized"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck_models -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck_models"/>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#usa -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#usa">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
     </owl:Class>
     
 
@@ -302,9 +1066,120 @@
     
 
 
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#valley -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#valley">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#woman"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vehicle -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vehicle"/>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volvo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volvo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheels -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheels"/>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#woman -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#woman">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#150sed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#150sed">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motoboy"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#190h -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#190h">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fat"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck_models"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#300spot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#300spot">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#headbanger"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_models"/>
+    </owl:Class>
     
 
 
@@ -322,7 +1197,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#accord -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#accord">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda"/>
     </owl:NamedIndividual>
     
@@ -331,7 +1205,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#active_tourer -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#active_tourer">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw"/>
     </owl:NamedIndividual>
     
@@ -340,7 +1213,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#argentina -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#argentina">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato"/>
     </owl:NamedIndividual>
     
@@ -349,7 +1221,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#atego -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#atego">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <carries rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#potato"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes"/>
     </owl:NamedIndividual>
@@ -358,16 +1229,13 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bean -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bean">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bean"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#biz110 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#biz110">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha"/>
     </owl:NamedIndividual>
     
@@ -375,16 +1243,13 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#blue_angels -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#blue_angels">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#blue_angels"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#canada"/>
     </owl:NamedIndividual>
     
@@ -393,7 +1258,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bravo -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bravo">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fiat"/>
     </owl:NamedIndividual>
     
@@ -402,7 +1266,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#brazil -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#brazil">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bean"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat"/>
     </owl:NamedIndividual>
@@ -412,7 +1275,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cabrio -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cabrio">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fiat"/>
     </owl:NamedIndividual>
     
@@ -421,7 +1283,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cadete -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cadete">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda"/>
     </owl:NamedIndividual>
     
@@ -430,7 +1291,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#camaro -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#camaro">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#general_motors"/>
     </owl:NamedIndividual>
     
@@ -439,7 +1299,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#canada -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#canada">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat"/>
     </owl:NamedIndividual>
     
@@ -448,7 +1307,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#captur -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#captur">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault"/>
     </owl:NamedIndividual>
     
@@ -457,7 +1315,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cargo1317 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cargo1317">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ford"/>
     </owl:NamedIndividual>
     
@@ -466,7 +1323,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cargo2422 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cargo2422">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ford"/>
     </owl:NamedIndividual>
     
@@ -475,7 +1331,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cargo2423 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cargo2423">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ford"/>
     </owl:NamedIndividual>
     
@@ -484,7 +1339,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cargo2428 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cargo2428">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <carries rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corn"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ford"/>
     </owl:NamedIndividual>
@@ -494,7 +1348,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#celta -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#celta">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#general_motors"/>
     </owl:NamedIndividual>
     
@@ -503,7 +1356,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cg160 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cg160">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha"/>
     </owl:NamedIndividual>
     
@@ -512,7 +1364,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#chile -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#chile">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#potato"/>
     </owl:NamedIndividual>
     
@@ -521,7 +1372,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#china -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#china">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat"/>
     </owl:NamedIndividual>
@@ -531,7 +1381,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#civic -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#civic">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda"/>
     </owl:NamedIndividual>
     
@@ -540,7 +1389,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#clarity -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#clarity">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda"/>
     </owl:NamedIndividual>
     
@@ -548,24 +1396,19 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colli -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colli">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colli"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colli_ultimate -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colli_ultimate">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colli_ultimate"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colorado -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colorado">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#general_motors"/>
     </owl:NamedIndividual>
     
@@ -574,7 +1417,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#comil_capione -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#comil_capione">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volvo"/>
     </owl:NamedIndividual>
     
@@ -583,7 +1425,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#constellation19330 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#constellation19330">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen"/>
     </owl:NamedIndividual>
     
@@ -592,7 +1433,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#constellation24250 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#constellation24250">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <carries rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen"/>
     </owl:NamedIndividual>
@@ -602,7 +1442,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#constellation24280 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#constellation24280">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <carries rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen"/>
     </owl:NamedIndividual>
@@ -611,16 +1450,13 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corn -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corn">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corn"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corolla -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corolla">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#toyota"/>
     </owl:NamedIndividual>
     
@@ -629,7 +1465,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corsa -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corsa">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#general_motors"/>
     </owl:NamedIndividual>
     
@@ -638,7 +1473,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corvette -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corvette">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#general_motors"/>
     </owl:NamedIndividual>
     
@@ -647,40 +1481,38 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#coupe -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#coupe">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes"/>
     </owl:NamedIndividual>
     
 
 
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cuckhold -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cuckhold"/>
+    
+
+
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#diablos -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#diablos">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#diablos"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#dire_wolves -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#dire_wolves">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#dire_wolves"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#druids_north -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#druids_north">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#druids_north"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#dt200r -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#dt200r">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha"/>
     </owl:NamedIndividual>
     
@@ -689,7 +1521,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#duster -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#duster">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault"/>
     </owl:NamedIndividual>
     
@@ -698,7 +1529,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#england -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#england">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#onion"/>
     </owl:NamedIndividual>
     
@@ -707,7 +1537,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#etios -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#etios">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#toyota"/>
     </owl:NamedIndividual>
     
@@ -716,7 +1545,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#etios_cross -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#etios_cross">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#toyota"/>
     </owl:NamedIndividual>
     
@@ -725,7 +1553,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#f700gs -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#f700gs">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw"/>
     </owl:NamedIndividual>
     
@@ -734,7 +1561,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#f800r -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#f800r">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw"/>
     </owl:NamedIndividual>
     
@@ -743,7 +1569,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ferrari -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ferrari">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#italy"/>
     </owl:NamedIndividual>
     
@@ -752,7 +1577,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fh460 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fh460">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volvo"/>
     </owl:NamedIndividual>
     
@@ -761,7 +1585,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fh540 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fh540">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <carries rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volvo"/>
     </owl:NamedIndividual>
@@ -771,7 +1594,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fiat -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fiat">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#italy"/>
     </owl:NamedIndividual>
     
@@ -780,7 +1602,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fit -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fit">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda"/>
     </owl:NamedIndividual>
     
@@ -789,7 +1610,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ford -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ford">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#usa"/>
     </owl:NamedIndividual>
     
@@ -798,7 +1618,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fox -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fox">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen"/>
     </owl:NamedIndividual>
     
@@ -806,24 +1625,19 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#free_souls -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#free_souls">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#free_souls"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#freeride -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#freeride">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#freeride"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#frontier -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#frontier">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#nissan"/>
     </owl:NamedIndividual>
     
@@ -832,7 +1646,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#g420 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#g420">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <carries rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#potato"/>
         <carries rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#scannia"/>
@@ -842,16 +1655,13 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#garlic -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#garlic">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#garlic"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#general_motors -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#general_motors">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#usa"/>
     </owl:NamedIndividual>
     
@@ -860,7 +1670,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#gol -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#gol">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen"/>
     </owl:NamedIndividual>
     
@@ -869,7 +1678,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#golf -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#golf">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen"/>
     </owl:NamedIndividual>
     
@@ -878,7 +1686,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#gtc4lusso -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#gtc4lusso">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ferrari"/>
     </owl:NamedIndividual>
     
@@ -886,24 +1693,25 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#gts -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#gts">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#gts"/>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#headbanger -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#headbanger"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#hells_angels -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#hells_angels">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#hells_angels"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#hilux -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#hilux">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#toyota"/>
     </owl:NamedIndividual>
     
@@ -912,7 +1720,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#japan"/>
     </owl:NamedIndividual>
     
@@ -921,7 +1728,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#i8 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#i8">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw"/>
     </owl:NamedIndividual>
     
@@ -930,7 +1736,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#idea -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#idea">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fiat"/>
     </owl:NamedIndividual>
     
@@ -939,7 +1744,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#indoor -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#indoor">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda"/>
     </owl:NamedIndividual>
     
@@ -948,7 +1752,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#italy -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#italy">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato"/>
     </owl:NamedIndividual>
     
@@ -957,7 +1760,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#japan -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#japan">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice"/>
     </owl:NamedIndividual>
     
@@ -966,7 +1768,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#jeep -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#jeep">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#brazil"/>
     </owl:NamedIndividual>
     
@@ -975,7 +1776,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#jetta -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#jetta">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen"/>
     </owl:NamedIndividual>
     
@@ -984,7 +1784,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#k1600b -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#k1600b">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw"/>
     </owl:NamedIndividual>
     
@@ -993,7 +1792,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#k1600gtl -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#k1600gtl">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw"/>
     </owl:NamedIndividual>
     
@@ -1002,7 +1800,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart-mini -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart-mini">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda"/>
     </owl:NamedIndividual>
     
@@ -1011,7 +1808,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kicks -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kicks">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#nissan"/>
     </owl:NamedIndividual>
     
@@ -1020,7 +1816,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kwid -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kwid">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault"/>
     </owl:NamedIndividual>
     
@@ -1029,7 +1824,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#linea -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#linea">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fiat"/>
     </owl:NamedIndividual>
     
@@ -1038,7 +1832,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#lo-815 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#lo-815">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes"/>
     </owl:NamedIndividual>
     
@@ -1046,16 +1839,13 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#lone_legion -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#lone_legion">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#lone_legion"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#m240i -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#m240i">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw"/>
     </owl:NamedIndividual>
     
@@ -1064,7 +1854,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#march -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#march">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#nissan"/>
     </owl:NamedIndividual>
     
@@ -1073,7 +1862,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#megane -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#megane">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault"/>
     </owl:NamedIndividual>
     
@@ -1082,7 +1870,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#england"/>
     </owl:NamedIndividual>
     
@@ -1091,7 +1878,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#nissan -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#nissan">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#south_korea"/>
     </owl:NamedIndividual>
     
@@ -1100,7 +1886,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#o-500rsd -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#o-500rsd">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes"/>
     </owl:NamedIndividual>
     
@@ -1109,7 +1894,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#o-500rsdd -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#o-500rsdd">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes"/>
     </owl:NamedIndividual>
     
@@ -1118,7 +1902,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#o-500u -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#o-500u">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes"/>
     </owl:NamedIndividual>
     
@@ -1127,7 +1910,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#of-1219 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#of-1219">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes"/>
     </owl:NamedIndividual>
     
@@ -1136,7 +1918,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#of-1723 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#of-1723">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes"/>
     </owl:NamedIndividual>
     
@@ -1145,7 +1926,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#oh-1626l -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#oh-1626l">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes"/>
     </owl:NamedIndividual>
     
@@ -1153,16 +1933,13 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#onion -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#onion">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#onion"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#p360 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#p360">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <carries rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#garlic"/>
         <carries rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#onion"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#scannia"/>
@@ -1173,7 +1950,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#paradiso1200 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#paradiso1200">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes"/>
     </owl:NamedIndividual>
     
@@ -1182,7 +1958,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#paradiso1550 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#paradiso1550">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes"/>
     </owl:NamedIndividual>
     
@@ -1191,7 +1966,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#pcx -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#pcx">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda"/>
     </owl:NamedIndividual>
     
@@ -1200,16 +1974,20 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#pilot -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#pilot">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#playboy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#playboy"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#polo -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#polo">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen"/>
     </owl:NamedIndividual>
     
@@ -1218,7 +1996,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#portofino -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#portofino">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ferrari"/>
     </owl:NamedIndividual>
     
@@ -1226,16 +2003,13 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#potato -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#potato">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#potato"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#punto -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#punto">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fiat"/>
     </owl:NamedIndividual>
     
@@ -1244,7 +2018,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#r440 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#r440">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#scannia"/>
     </owl:NamedIndividual>
     
@@ -1252,16 +2025,13 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rebels -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rebels">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rebels"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#chile"/>
     </owl:NamedIndividual>
     
@@ -1270,7 +2040,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renegade -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renegade">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#jeep"/>
     </owl:NamedIndividual>
     
@@ -1278,16 +2047,13 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#s1000rr -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#s1000rr">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw"/>
     </owl:NamedIndividual>
     
@@ -1296,7 +2062,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#sandero -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#sandero">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault"/>
     </owl:NamedIndividual>
     
@@ -1305,7 +2070,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#scannia -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#scannia">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#spain"/>
     </owl:NamedIndividual>
     
@@ -1314,7 +2078,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#scenic -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#scenic">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault"/>
     </owl:NamedIndividual>
     
@@ -1323,7 +2086,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#sentra -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#sentra">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#nissan"/>
     </owl:NamedIndividual>
     
@@ -1332,7 +2094,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#sh300i -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#sh300i">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda"/>
     </owl:NamedIndividual>
     
@@ -1341,7 +2102,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#south_korea -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#south_korea">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#garlic"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice"/>
     </owl:NamedIndividual>
@@ -1351,7 +2111,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#spain -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#spain">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#potato"/>
     </owl:NamedIndividual>
     
@@ -1360,7 +2119,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#speed0 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#speed0">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda"/>
     </owl:NamedIndividual>
     
@@ -1368,16 +2126,13 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#touring -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#touring">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha"/>
     </owl:NamedIndividual>
     
@@ -1386,7 +2141,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#toyota -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#toyota">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#china"/>
     </owl:NamedIndividual>
     
@@ -1395,7 +2149,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#trax -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#trax">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#general_motors"/>
     </owl:NamedIndividual>
     
@@ -1404,7 +2157,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#uno -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#uno">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fiat"/>
     </owl:NamedIndividual>
     
@@ -1413,7 +2165,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#up -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#up">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen"/>
     </owl:NamedIndividual>
     
@@ -1422,7 +2173,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#usa -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#usa">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
         <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corn"/>
     </owl:NamedIndividual>
     
@@ -1437,7 +2187,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#virago -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#virago">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha"/>
     </owl:NamedIndividual>
     
@@ -1446,7 +2195,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vm260 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vm260">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <carries rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bean"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volvo"/>
     </owl:NamedIndividual>
@@ -1456,7 +2204,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vm270 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vm270">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volvo"/>
     </owl:NamedIndividual>
     
@@ -1465,7 +2212,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#argentina"/>
     </owl:NamedIndividual>
     
@@ -1474,7 +2220,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volvo -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volvo">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#brazil"/>
     </owl:NamedIndividual>
     
@@ -1483,7 +2228,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vw24250 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vw24250">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <carries rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen"/>
     </owl:NamedIndividual>
@@ -1492,16 +2236,13 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat"/>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#worker17230 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#worker17230">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <carries rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#potato"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen"/>
     </owl:NamedIndividual>
@@ -1511,7 +2252,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#x3 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#x3">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw"/>
     </owl:NamedIndividual>
     
@@ -1520,7 +2260,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#xtz250 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#xtz250">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha"/>
     </owl:NamedIndividual>
     
@@ -1529,7 +2268,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker"/>
         <located_at rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#japan"/>
     </owl:NamedIndividual>
     
@@ -1538,7 +2276,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ybr125 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ybr125">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha"/>
     </owl:NamedIndividual>
     
@@ -1547,7 +2284,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ys250 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ys250">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha"/>
     </owl:NamedIndividual>
     
@@ -1556,7 +2292,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#150sed -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#150sed">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha"/>
     </owl:NamedIndividual>
     
@@ -1565,7 +2300,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#190h -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#190h">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fiat"/>
     </owl:NamedIndividual>
     
@@ -1574,7 +2308,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#300spot -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#300spot">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha"/>
     </owl:NamedIndividual>
     
@@ -1583,7 +2316,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#488pist -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#488pist">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ferrari"/>
     </owl:NamedIndividual>
     
@@ -1592,9 +2324,105 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#488spider -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#488spider">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
         <mounted_by rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ferrari"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#argentina"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#brazil"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#canada"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#chile"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#china"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#england"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#italy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#japan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#south_korea"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#spain"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#usa"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#automaker_models"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bicycle_models"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bus_models"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart_models"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_models"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck_models"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#blue_angels"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#diablos"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#dire_wolves"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#druids_north"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#free_souls"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#hells_angels"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#lone_legion"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rebels"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bmw"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ferrari"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fiat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#ford"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#general_motors"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#honda"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#jeep"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#mercedes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#nissan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#scania"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#toyota"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volkswagen"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volvo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#yamaha"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cadete"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#indoor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart-mini"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colli"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colli_ultimate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#freeride"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#gts"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vehicle"/>
+        </owl:members>
+    </rdf:Description>
 </rdf:RDF>
 
 
