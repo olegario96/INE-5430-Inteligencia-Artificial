@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1524232959389" name="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6" uri="gustavo_e_fabio.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1524237960612" name="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6" uri="gustavo_e_fabio.owl"/>
     </group>
 </catalog>

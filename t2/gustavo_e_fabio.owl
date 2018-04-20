@@ -208,7 +208,17 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bearded -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bearded">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#drives"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#duster"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
     </owl:Class>
     
 
@@ -270,7 +280,7 @@
                     <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#checky"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#old_man"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -411,6 +421,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#checky">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#woman"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#valley"/>
     </owl:Class>
     
 
@@ -704,17 +715,7 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#man">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#drives"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vehicle"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#woman"/>
     </owl:Class>
     
@@ -872,17 +873,7 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#woman -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#woman">
-        <rdfs:subClassOf>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#drives"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vehicle"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#user"/>
     </owl:Class>
     
 
@@ -1154,6 +1145,20 @@
             <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_models"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#truck_models"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bearded"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#cuckhold"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#dwarf"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fat"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#headbanger"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#malaco"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motoboy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#old_man"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#playboy"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>
