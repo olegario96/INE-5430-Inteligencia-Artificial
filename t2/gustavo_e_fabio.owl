@@ -205,14 +205,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bean -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bean">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bearded -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bearded">
@@ -451,14 +443,6 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corn -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corn">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
     </owl:Class>
     
 
@@ -811,34 +795,10 @@
     
 
 
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#potato -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#potato">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rebels -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rebels">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#motorcycle_club"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
     </owl:Class>
     
 
@@ -894,14 +854,6 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vehicle -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vehicle"/>
-    
-
-
-    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
-    </owl:Class>
     
 
 
@@ -997,9 +949,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bean"/>
+    
+
+
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#brazil -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#brazil"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#brazil">
+        <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bean"/>
+    </owl:NamedIndividual>
     
 
 
@@ -1025,13 +985,21 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#china -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#china"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#china">
+        <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat"/>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#civic -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#civic"/>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corn"/>
     
 
 
@@ -1070,13 +1038,18 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#italy -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#italy"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#italy">
+        <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice"/>
+        <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato"/>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#japan -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#japan"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#japan">
+        <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice"/>
+    </owl:NamedIndividual>
     
 
 
@@ -1100,9 +1073,21 @@
     
 
 
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#rice"/>
+    
+
+
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#scania -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#scania"/>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#tomato"/>
     
 
 
@@ -1114,13 +1099,21 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#usa -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#usa"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#usa">
+        <produces rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#corn"/>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volvo -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#volvo"/>
+    
+
+
+    <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#wheat"/>
     
 
 
