@@ -270,7 +270,7 @@
                     <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#kart"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#playboy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#checky"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -289,12 +289,18 @@
                     <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#playboy"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#playboy"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#car_models"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#driven_by"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#playboy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -1014,7 +1020,7 @@
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#elder -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#elder">
-        <rdf:type rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#bearded"/>
+        <drives rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#duster"/>
     </owl:NamedIndividual>
     
 
@@ -1069,7 +1075,9 @@
 
     <!-- http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#renault">
+        <mounts rdf:resource="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#duster"/>
+    </owl:NamedIndividual>
     
 
 
@@ -1172,6 +1180,18 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#camaro"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#captur"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#celta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#civic"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#colorado"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#duster"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#fox"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#country"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#food"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#vehicle"/>
@@ -1191,15 +1211,17 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#camaro"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#celta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#civic"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#duster"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#elder"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#neymar"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#celta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/olegario/ontologies/2018/3/untitled-ontology-6#duster"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
