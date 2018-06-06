@@ -51,10 +51,15 @@ RULEBLOCK No1
     AND : MIN;
     OR : MAX;
     
-    RULE 1 : IF angle IS turnedToLeft OR angle IS turnedToLeftBottom THEN steering IS steeringAlignedToLeft;
-    RULE 2 : IF angle IS turnedToRight OR angle IS TurnedToRightBottom THEN steering IS steeringAlignedToRight;
-    RULE 3 : IF angle IS turnedToBottom THEN steering IS steeringAlignedToLeft;
-    RULE 4 : IF angle IS TurnedToRightBottom AND positionX IS moderateRight THEN steering IS steeringAlignedToLeft;  
+    RULE 1 : IF angle IS turnedToTop AND positionX IS middle THEN steering IS steeringCentered;
+    RULE 2 : IF angle IS turnedToRight THEN steering IS steeringAlignedToRight;
+    RULE 3 : IF angle IS turnedToLeft THEN steering IS steeringAlignedToLeft;
+    RULE 4 : IF angle IS turnedToBottom OR angle IS turnedToLeftBottom THEN steering IS steeringAlignedToLeft;
+    RULE 6 : IF angle IS TurnedToRightBottom  THEN steering IS steeringAlignedToLeft;   
+    RULE 7 : IF positionX IS right THEN steering IS steeringAlignedToLeft;
+    RULE 8 : IF positionX IS left THEN steering IS steeringAlignedToRight;
+    RULE 9 : IF positionX IS moderateLeft AND angle IS turnedToTop OR angle IS turnedToLeftTop THEN steering IS steeringAlignedToLeft;
+    RULE 10 : IF positionX IS moderateRight AND angle IS turnedToTop OR angle IS turnedToRightTop THEN steering IS steeringAlignedToRight;
 END_RULEBLOCK
 
 END_FUNCTION_BLOCK
