@@ -1,0 +1,60 @@
+FUNCTION_BLOCK truck
+
+VAR_INPUT
+    positionX : REAL;
+    positionY : REAL;
+    angle : REAL;
+END_VAR
+
+VAR_OUTPUT
+    steering : REAL;
+END_VAR
+
+FUZZIFY positionX
+    TERM left := (0, 1) (0.2, 0.5);
+    TERM moderateLeft := (0.2, 0) (0.3, 1) (0.45, 0.5);
+    TERM middle := (0.45, 0) (0.5, 1) (0.55, 0);
+    TERM moderateRight := (0.55, 0.5) (0.7, 1) (0.8, 0);
+    TERM right := (0.8, 0.5) (1, 1);
+END_FUZZIFY
+
+FUZZIFY positionY
+    TERM top := (0, 1) (0.2, 0.5);
+    TERM moderateTop := (0.2, 0) (0.3, 1) (0.45, 0.5);
+    TERM topBottom := (0.45, 0) (0.5, 1) (0.55, 0);
+    TERM moderateBottom := (0.55, 0.5) (0.7, 1) (0.8, 0);
+    TERM bottom := (0.8, 0.5) (1, 1);
+END_FUZZIFY
+
+FUZZIFY angle
+    TERM turnedToRight := (0, 1) (45, 0);
+    TERM turnedToRightTop := (0, 0) (45, 1) (90, 0);
+    TERM turnedToTop := (45, 0) (90, 1) (135, 0);
+    TERM turnedToLeftTop := (90, 0) (135, 1) (180, 0);
+    TERM turnedToLeft := (135, 0) (180, 1) (225, 0);
+    TERM turnedToLeftBottom := (180, 0) (225, 1) (270, 0);
+    TERM turnedToBottom := (225, 0) (270, 1) (315, 0);
+    TERM TurnedToRightBottom := (270, 0) (315, 1) (360, 0);
+END_FUZZIFY
+
+DEFUZZIFY steering
+    TERM steeringAlignedToLeft := (-30, 1) (-20, 0.5);
+    TERM steeringProneToBeAlignedLeft := (-20, 0) (-15, 1) (-10, 0.5);
+    TERM steeringCentered := (-10, 0) (0, 1) (10, 0);
+    TERM steeringProneToBeAlignedRight := (10, 0.5) (15, 1) (20, 0);
+    TERM steeringAlignedToRight := (20, 0.5) (30, 1);
+    METHOD : COG;
+    DEFAULT := 0;
+END_DEFUZZIFY
+
+RULEBLOCK No1
+    AND : MIN;
+    OR : MAX;
+    
+    RULE 1 : IF angle IS turnedToLeft OR angle IS turnedToLeftBottom THEN steering IS steeringAlignedToLeft;
+    RULE 2 : IF angle IS turnedToRight OR angle IS TurnedToRightBottom THEN steering IS steeringAlignedToRight;
+    RULE 3 : IF angle IS turnedToBottom THEN steering IS steeringAlignedToLeft;
+    RULE 4 : IF angle IS TurnedToRightBottom AND positionX IS moderateRight THEN steering IS steeringAlignedToLeft;  
+END_RULEBLOCK
+
+END_FUNCTION_BLOCK
