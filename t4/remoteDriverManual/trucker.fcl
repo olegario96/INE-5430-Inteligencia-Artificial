@@ -11,11 +11,11 @@ VAR_OUTPUT
 END_VAR
 
 FUZZIFY positionX
-    TERM left := (0, 1) (0.3, 0);
-    TERM moderateLeft := (0.2, 0) (0.325, 1) (0.45, 0);
-    TERM middle := (0.4, 0) (0.5, 1) (0.6, 0);
-    TERM moderateRight := (0.55, 0) (0.675, 1) (0.8, 0);
-    TERM right := (0.7, 0) (1, 1);
+    TERM left := (0, 1) (0.25, 1) (0.35, 0);
+    TERM moderateLeft := TRIAN 0.3 0.4 0.5;
+    TERM middle := TRAPE 0.4 0.425 0.575 0.6;
+    TERM moderateRight := TRIAN 0.5 0.6 0.7;
+    TERM right := (0.65 ,0) (0.75,1) (1,1);
 END_FUZZIFY
 
 FUZZIFY positionY
@@ -27,7 +27,7 @@ FUZZIFY positionY
 END_FUZZIFY
 
 FUZZIFY angle
-    TERM turnedToRight := (0, 1) (45, 0);
+    TERM turnedToRight := (0, 1) (45, 0) (315, 0) (360, 1);
     TERM turnedToRightTop := (0, 0) (45, 1) (90, 0);
     TERM turnedToTop := (45, 0) (90, 1) (135, 0);
     TERM turnedToLeftTop := (90, 0) (135, 1) (180, 0);
@@ -35,16 +35,18 @@ FUZZIFY angle
     TERM turnedToLeftBottom := (180, 0) (225, 1) (270, 0);
     TERM turnedToBottom := (225, 0) (270, 1) (315, 0);
     TERM TurnedToRightBottom := (270, 0) (315, 1) (360, 0);
+    
 END_FUZZIFY
 
 DEFUZZIFY steering
-    TERM steeringAlignedToLeft := (-30, 1) (-14, 0.47);
+    TERM steeringAlignedToLeft := (-30, 1) (-14, 0.5);
     TERM steeringProneToBeAlignedLeft := (-15, 0) (-7.5, 1) (0, 0);
     TERM steeringCentered := (-5, 0) (0, 1) (5, 0);
     TERM steeringProneToBeAlignedRight := (0, 0) (7.5, 1) (15, 0);
-    TERM steeringAlignedToRight := (14, 0.47) (30, 1);
+    TERM steeringAlignedToRight := (14, 0.5) (30, 1);
     METHOD : COG;
     DEFAULT := 0;
+    
 END_DEFUZZIFY
 
 RULEBLOCK No1
@@ -52,19 +54,19 @@ RULEBLOCK No1
     OR : MAX;
     
     RULE 1 : IF angle IS turnedToTop AND positionX IS middle THEN steering IS steeringCentered;
-    RULE 2 : IF angle IS turnedToRight THEN steering IS steeringAlignedToRight;
-    RULE 3 : IF angle IS turnedToLeft THEN steering IS steeringAlignedToLeft;
-    RULE 4 : IF angle IS turnedToBottom OR angle IS turnedToLeftBottom THEN steering IS steeringAlignedToLeft;
-    RULE 6 : IF angle IS TurnedToRightBottom  THEN steering IS steeringAlignedToRight;   
-    RULE 7 : IF positionX IS right THEN steering IS steeringAlignedToLeft;
-    RULE 8 : IF positionX IS left THEN steering IS steeringAlignedToRight;
-    RULE 9 : IF positionX IS moderateLeft AND angle IS turnedToLeftTop THEN steering IS steeringAlignedToLeft;
-    RULE 10 : IF positionX IS moderateLeft AND angle IS turnedToRightTop THEN steering IS steeringAlignedToRight;
-    RULE 11 : IF positionX IS moderateRight AND angle IS turnedToRightTop OR angle IS turnedToTop THEN steering IS steeringAlignedToRight;
-    RULE 12 : IF positionX IS moderateRight AND angle IS turnedToLeftTop THEN steering IS steeringAlignedToRight;
-    RULE 13 : IF positionX IS middle AND angle IS turnedToLeftTop THEN steering IS steeringProneToBeAlignedRight;
-    RULE 14 : IF positionX IS middle AND angle IS turnedToRightTop THEN steering IS steeringProneToBeAlignedLeft;
-    RULE 15 : IF positionX IS middle AND angle IS turnedToTop THEN steering IS steeringCentered;
+    RULE 2  : IF angle IS turnedToRight THEN steering IS steeringAlignedToRight;
+    RULE 3  : IF angle IS turnedToLeft THEN steering IS steeringAlignedToLeft;
+    RULE 4  : IF angle IS turnedToBottom OR angle IS turnedToLeftBottom THEN steering IS steeringAlignedToLeft; 
+    RULE 5  : IF angle IS TurnedToRightBottom  THEN steering IS steeringAlignedToRight;   
+    RULE 6  : IF positionX IS right THEN steering IS steeringAlignedToLeft;
+    RULE 7  : IF positionX IS left THEN steering IS steeringAlignedToRight;
+    RULE 8  : IF positionX IS moderateLeft AND angle IS turnedToLeftTop THEN steering IS steeringProneToBeAlignedRight;
+    RULE 9 : IF positionX IS moderateLeft AND angle IS turnedToRightTop THEN steering IS steeringAlignedToRight;
+    RULE 10 : IF positionX IS moderateRight AND angle IS turnedToRightTop THEN steering IS steeringProneToBeAlignedLeft;
+    RULE 11 : IF positionX IS moderateRight AND angle IS turnedToLeftTop THEN steering IS steeringAlignedToLeft;
+    RULE 12 : IF positionX IS middle AND angle IS turnedToLeftTop THEN steering IS steeringProneToBeAlignedRight;
+    RULE 13 : IF positionX IS middle AND angle IS turnedToRightTop THEN steering IS steeringProneToBeAlignedLeft;
+    
 END_RULEBLOCK
 
 END_FUNCTION_BLOCK
