@@ -27,7 +27,7 @@ FUZZIFY positionY
 END_FUZZIFY
 
 FUZZIFY angle
-    TERM turnedToRight := (0, 1) (45, 0);
+    TERM turnedToRight := (0, 1) (45, 0) (315, 0) (360, 1);
     TERM turnedToRightTop := (0, 0) (45, 1) (90, 0);
     TERM turnedToTop := (45, 0) (90, 1) (135, 0);
     TERM turnedToLeftTop := (90, 0) (135, 1) (180, 0);
@@ -64,5 +64,7 @@ RULEBLOCK No1
     RULE 9 : IF positionX IS middle AND angle IS turnedToLeftTop THEN steering IS steeringTendingToTurnLeft;
     RULE 10 : IF positionX IS moderateLeft AND angle IS turnedToTop THEN steering IS steeringTendingToTurnRight;
     RULE 11 : IF positionY IS topBottom OR positionY IS moderateBottom THEN steering IS steeringCentered;
+    RULE 12 : IF positionX IS right AND angle IS turnedToTop THEN steering IS steeringTotallyTurnedToRight;
+    RULE 13 : IF positionX IS moderateRight AND positionY IS bottom AND angle IS turnedToRightTop THEN steering IS steeringTendingToTurnRight;
 END_RULEBLOCK
 END_FUNCTION_BLOCK
