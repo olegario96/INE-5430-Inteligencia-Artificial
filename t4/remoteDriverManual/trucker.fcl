@@ -58,8 +58,8 @@ RULEBLOCK No1
     RULE 3 : IF (angle IS turnedToLeft) AND positionX IS moderateRight THEN steering IS steeringTurnedToLeft;
     RULE 4 : IF (angle IS turnedToBottom) AND (positionX IS left) THEN steering IS steeringTotallyTurnedToLeft;
     RULE 5 : IF (angle IS turnedToBottom) AND (positionX IS right) THEN steering IS steeringTotallyTurnedToRight;
-    RULE 6 : IF (angle IS turnedToLeftBottom) THEN steering IS steeringTurnedToLeft;
-    RULE 7 : IF (angle IS turnedToRightBottom)  THEN steering IS steeringTurnedToRight;   
+    RULE 6 : IF (angle IS turnedToLeftBottom) THEN steering IS steeringTotallyTurnedToLeft;
+    RULE 7 : IF (angle IS turnedToRightBottom)  THEN steering IS steeringTotallyTurnedToRight;   
     RULE 8 : IF (positionX IS right) THEN steering IS steeringTotallyTurnedToLeft;
     RULE 9 : IF (positionX IS left) THEN steering IS steeringTotallyTurnedToRight; 
     RULE 10 : IF (positionX IS middle) AND (angle IS turnedToLeftTop) THEN steering IS steeringTendingToTurnLeft;
@@ -67,7 +67,7 @@ RULEBLOCK No1
     RULE 12 : IF (positionX IS moderateLeft) AND (angle IS turnedToTop) THEN steering IS steeringTendingToTurnRight;
     RULE 13 : IF (positionX IS moderateRight) AND (angle IS turnedToTop) THEN steering IS steeringTendingToTurnLeft;
     RULE 14 : IF (positionY IS topBottom) OR (positionY IS moderateBottom) THEN steering IS steeringCentered;
-    RULE 15 : IF positionX IS middle AND positionY IS bottom AND angle IS turnedToRightTop THEN steering IS steeringTendingToTurnRight;
+    RULE 15 : IF positionX IS moderateRight OR positionX IS right AND positionY IS bottom AND angle IS turnedToRightBottom THEN steering IS steeringCentered;
     RULE 16 : IF (angle IS turnedToLeft) AND positionX IS middle THEN steering IS steeringTurnedToLeft;
     RULE 17 : IF (angle IS turnedToRight) AND positionX IS middle THEN steering IS steeringTurnedToRight;
 END_RULEBLOCK
